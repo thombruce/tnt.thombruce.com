@@ -4,8 +4,6 @@ description: Provides Breadcrumbs for pages published with TNT Content.
 category: TNT Content
 ---
 
-## UTC
-
 ```js
 <TntBreadcrumbs collection="docs" />
 ```
