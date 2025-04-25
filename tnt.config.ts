@@ -3,9 +3,9 @@ import type { NavigationMenuItem } from "@nuxt/ui"
 const config = {
   /* Site Config */
   site: {
-    name: null,
+    name: 'TNT',
     description: null,
-    url: null,
+    url: 'https://tnt.thombruce.com',
     copyright: null,
     defaultLocale: 'en',
     nav: true,
