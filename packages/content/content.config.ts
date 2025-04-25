@@ -1,5 +1,12 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
+// Reusable author
+const author = z.object({
+  name: z.string(),
+  avatar: z.object({ src: z.string() }).optional(),
+  to: z.string().url().optional(),
+})
+
 // Global keys shared by all content pages
 const global = {
   layout: z.string().optional(),
@@ -8,6 +15,12 @@ const global = {
   description: z.string(),
   image: z.string().optional(),
   images: z.array(z.string()).optional(),
+  date: z.string().date(),
+  category: z.string().optional(),
+  categories: z.array(z.string()).optional(),
+  author: author.optional(),
+  authors: z.array(author).optional(),
+  tags: z.array(z.string()).optional(),
   list: z.boolean()
     .or(z.string())
     .or(z.object({
@@ -16,13 +29,6 @@ const global = {
       order: z.object({ field: z.string(), direction: z.enum(['ASC', 'DESC']) }).optional()
     })).optional(),
 }
-
-// Reusable author
-const author = z.object({
-  name: z.string(),
-  avatar: z.object({ src: z.string() }).optional(),
-  to: z.string().url().optional(),
-})
 
 export default defineContentConfig({
   collections: {
@@ -47,12 +53,6 @@ export default defineContentConfig({
       schema: z.object({
         ...global,
         layout: z.string().default('article'),
-        date: z.string().date(),
-        category: z.string().optional(),
-        categories: z.array(z.string()).optional(),
-        author: author.optional(),
-        authors: z.array(author).optional(),
-        tags: z.array(z.string()).optional(),
       })
     }),
     // Docs: For documentation websites
