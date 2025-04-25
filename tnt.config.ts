@@ -21,6 +21,8 @@ const config = {
   /* Route Rules */
   routeRules: {
     /* Custom route rules */
+    '/docs': { redirect: '/docs/getting-started/installation' },
+    '/docs/getting-started': { redirect: '/docs/getting-started/installation' },
   }
 } as TntConfig
 
