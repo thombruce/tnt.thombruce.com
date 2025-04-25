@@ -1,6 +1,7 @@
-# Clock
-
-Provides a digital clock component.
+---
+title: Clock
+description: Provides a digital clock component.
+---
 
 ## UTC
 
