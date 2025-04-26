@@ -3,6 +3,10 @@
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 
+import fs from 'fs'
+
+//const fs = require('fs')
+
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
@@ -20,7 +24,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
   css: [
-    join(currentDir, './assets/css/main.css')
+    fs.existsSync('./assets/css/main.css')
+      ? './assets/css/main.css'
+      : join(currentDir, './assets/css/main.css'),
   ],
   app: {
     head: {
