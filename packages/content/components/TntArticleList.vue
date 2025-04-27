@@ -20,7 +20,7 @@ const { data: items } = await useAsyncData(`tntList-for-${collection}-${path}`, 
 
 <template lang="pug">
 div.my-4.space-y-4
-  ULink.block(v-if="items" v-for="item in items" :to="item.path")
+  ULink.block(v-if="items?.length" v-for="item in items" :to="item.path")
     UCard
       .grid.grid-cols-10.gap-10
         div(:class="item.image ? 'col-span-7' : 'col-span-10'")
@@ -44,4 +44,6 @@ div.my-4.space-y-4
         .col-span-3(v-if="item.image")
           .block.aspect-square
             NuxtImg.w-full.h-full.object-cover(:src="item.image" fit="cover" width="600" height="600")
+  div(v-else)
+    p No items to show.
 </template>

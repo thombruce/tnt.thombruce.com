@@ -3,6 +3,8 @@ import * as locales from '@nuxt/ui/locale'
 
 const { locale } = useI18n()
 
+const { backgroundPattern } = useSiteConfig()
+
 // TODO:
 // - Brochure view
 // - Docs view
@@ -51,6 +53,7 @@ const { locale } = useI18n()
 
 <template lang="pug">
 UApp(:locale="locales[locale]")
+  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
   NuxtRouteAnnouncer/
   NuxtPage/
 </template>

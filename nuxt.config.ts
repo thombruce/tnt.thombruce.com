@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: [
     './packages/core',
+    './packages/fancy',
     './packages/content',
   ],
   modules: [
@@ -18,6 +19,7 @@ export default defineNuxtConfig({
     url: siteConfig.url || 'https://example.com/',
     copyright: siteConfig.copyright || 'Copyright © All rights reserved',
     nav: siteConfig.nav || false,
+    backgroundPattern: siteConfig.backgroundPattern || false,
   },
   routeRules: {
     ...routeRules,
