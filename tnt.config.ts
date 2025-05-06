@@ -9,7 +9,7 @@ const config = {
     copyright: null,
     defaultLocale: 'en',
     nav: true,
-    backgroundPattern: 'topography',
+    backgroundPattern: false,
   },
 
   /* Collections */
