@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { UDrawer } from '#components';
-
 const { name, nav: navConfig } = useSiteConfig()
 
 const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
@@ -22,15 +20,7 @@ div(class="w-full \
           justify-between"
   )
     .flex
-      UDrawer(direction="left" class="md:hidden")
-        UButton(
-          icon="i-lucide:menu"
-          color="neutral"
-          variant="ghost"
-          class="my-2 px-2.5 py-1.5"
-        )
-        template(#content)
-          UNavigationMenu(:items="navItems || undefined" orientation="vertical")/
+      TntNavigationDrawer(:items="navItems")/
 
       UButton(
         :label="name"

@@ -53,7 +53,7 @@ const { backgroundPattern } = useSiteConfig()
 
 <template lang="pug">
 UApp(:locale="locales[locale]")
-  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
   NuxtRouteAnnouncer/
   NuxtPage/
+  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 </template>
