@@ -55,5 +55,4 @@ const { backgroundPattern } = useSiteConfig()
 UApp(:locale="locales[locale]")
   NuxtRouteAnnouncer/
   NuxtPage/
-  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 </template>

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   extends: [
     './packages/core',
     './packages/fancy',
+    './packages/web',
     './packages/content',
   ],
   modules: [
