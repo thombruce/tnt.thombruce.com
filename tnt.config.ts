@@ -12,13 +12,6 @@ const config = {
     backgroundPattern: false,
   },
 
-  /* Collections */
-  collections: [
-    'pages',
-    'blog',
-    'docs',
-  ],
-
   /* Route Rules */
   routeRules: {
     /* Custom route rules */
@@ -28,13 +21,11 @@ const config = {
 } as TntConfig
 
 export const siteConfig = config.site
-export const collections = config.collections
 export const routeRules = config.routeRules
 
 /* TYPES */
 type TntConfig = {
   site: SiteConfig,
-  collections?: CollectionList,
   routeRules?: RouteRules
 }
 
@@ -47,8 +38,6 @@ type SiteConfig = {
   nav: NavigationMenuItem[] | boolean,
   backgroundPattern?: string | false | null,
 }
-
-type CollectionList = string[]
 
 type RouteRules = {
   [k: string]: {

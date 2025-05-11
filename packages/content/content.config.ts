@@ -34,34 +34,15 @@ export default defineContentConfig({
   collections: {
     // Pages: E.g. /index.md, /about.md
     pages: defineCollection({
-      source: {
-        include: '**/*',
-        exclude: [
-          '*blog/**/*',
-          '*docs/**/*',
-        ]
-      },
+      source: [
+        {
+          include: '**/*',
+          exclude: []
+        },
+      ],
       type: 'page',
       schema: z.object({
         ...global,
-      })
-    }),
-    // Blog: Article-like posts
-    blog: defineCollection({
-      source: '*blog/**/*',
-      type: 'page',
-      schema: z.object({
-        ...global,
-        layout: z.string().default('article'),
-      })
-    }),
-    // Docs: For documentation websites
-    docs: defineCollection({
-      source: '*docs/**/*',
-      type: 'page',
-      schema: z.object({
-        ...global,
-        layout: z.string().default('doc'),
       })
     }),
   }

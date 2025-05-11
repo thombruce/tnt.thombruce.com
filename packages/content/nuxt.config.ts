@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       layers: [
-        'tnt-content'
+        'tnt-content',
+      ],
+      collections: [
+        'pages',
       ],
     },
   },
