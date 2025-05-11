@@ -1,14 +1,14 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 // Reusable author
-const author = z.object({
+export const author = z.object({
   name: z.string(),
   avatar: z.object({ src: z.string() }).optional(),
   to: z.string().url().optional(),
 })
 
 // Global keys shared by all content pages
-const global = {
+export const global = {
   layout: z.string().optional(),
   title: z.string(),
   icon: z.string().optional(),
