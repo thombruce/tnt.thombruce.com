@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
     public: {
+      layers: [
+        'tnt-web'
+      ],
       googleAnalytics: {
         // NUXT_PUBLIC_GOOGLE_ANALYTICS_ID=<your-id>
         id: '',
