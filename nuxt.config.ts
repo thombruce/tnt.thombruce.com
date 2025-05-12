@@ -14,6 +14,14 @@ export default defineNuxtConfig({
   modules: [
     /* Custom Modules */
   ],
+  runtimeConfig: {
+    public: {
+      collections: [
+        'blog',
+        'docs',
+      ]
+    }
+  },
   site: {
     name: siteConfig.name || 'TNT',
     description: siteConfig.description || 'Welcome to TNT!',
