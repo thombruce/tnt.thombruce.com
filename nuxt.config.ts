@@ -1,10 +1,43 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { siteConfig, routeRules } from './tnt.config'
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  site: {
+    name: 'TNT',
+    description: null,
+    url: 'https://tnt.thombruce.com',
+    copyright: null,
+    nav: true,
+    backgroundPattern: false,
+  },
+  routeRules: {
+    /* Custom route rules */
+    '/docs': { redirect: '/docs/getting-started/installation' },
+    '/docs/getting-started': { redirect: '/docs/getting-started/installation' },
+  },
+  runtimeConfig: {
+    public: {
+      collections: [
+        /* Custom content collections */
+        'blog',
+        'docs',
+      ],
+    },
+  },
+  ui: {
+    theme: {
+      colors: [
+        'primary',
+        'secondary',
+        'success',
+        'info',
+        'warning',
+        'error',
+        'neutral',
+      ],
+    },
+  },
   extends: [
     './packages/core',
     './packages/fancy',
@@ -14,23 +47,4 @@ export default defineNuxtConfig({
   modules: [
     /* Custom Modules */
   ],
-  runtimeConfig: {
-    public: {
-      collections: [
-        'blog',
-        'docs',
-      ]
-    }
-  },
-  site: {
-    name: siteConfig.name || 'TNT',
-    description: siteConfig.description || 'Welcome to TNT!',
-    url: siteConfig.url || 'https://example.com/',
-    copyright: siteConfig.copyright || 'Copyright © All rights reserved',
-    nav: siteConfig.nav || false,
-    backgroundPattern: siteConfig.backgroundPattern || false,
-  },
-  routeRules: {
-    ...routeRules,
-  },
 })
