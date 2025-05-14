@@ -1,12 +1,14 @@
 {
   "name": "@thombruce/tnt-fancy",
-  "private": true,
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.2",
   "type": "module",
   "dependencies": {
     "culori": "^4.0.1"
   },
   "devDependencies": {
     "@types/culori": "^2.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

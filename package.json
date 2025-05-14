@@ -17,5 +17,10 @@
     "@nuxt/devtools": "^2.4.0",
     "lerna": "^8.1.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@thombruce/tnt": "^1.0.0-alpha.2",
+    "@thombruce/tnt-content": "^1.0.0-alpha.2",
+    "@thombruce/tnt-fancy": "^1.0.0-alpha.2",
+    "@thombruce/tnt-web": "^1.0.0-alpha.2"
+  }
 }

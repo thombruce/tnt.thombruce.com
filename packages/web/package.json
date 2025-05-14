@@ -1,6 +1,8 @@
 {
   "name": "@thombruce/tnt-web",
-  "private": true,
-  "version": "1.0.0-alpha.0",
-  "type": "module"
+  "version": "1.0.0-alpha.2",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  }
 }

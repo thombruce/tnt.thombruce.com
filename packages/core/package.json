@@ -1,7 +1,8 @@
 {
   "name": "@thombruce/tnt",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.2",
   "type": "module",
+  "style": "./assets/css/main.css",
   "dependencies": {
     "@internationalized/date": "^3.7.0",
     "@nuxt/eslint": "^1.2.0",
@@ -26,5 +27,8 @@
   },
   "devDependencies": {
     "@vue/language-plugin-pug": "^2.2.8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
