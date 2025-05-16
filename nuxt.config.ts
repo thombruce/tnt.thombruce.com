@@ -39,10 +39,10 @@ export default defineNuxtConfig({
     },
   },
   extends: [
-    './packages/core',
-    './packages/fancy',
-    './packages/web',
-    './packages/content',
+    '@thombruce/tnt',
+    '@thombruce/tnt-fancy',
+    '@thombruce/tnt-web',
+    '@thombruce/tnt-content',
   ],
   modules: [
     /* Custom Modules */

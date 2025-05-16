@@ -1,9 +1,10 @@
 {
   "name": "@thombruce/tnt-template",
-  "version": "0.0.0",
+  "version": "1.0.0-alpha.6",
   "private": true,
   "type": "module",
   "workspaces": [
+    ".",
     "packages/*"
   ],
   "scripts": {
@@ -15,12 +16,13 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.4.0",
-    "lerna": "^8.1.2"
+    "lerna": "^8.1.2",
+    "nuxt": "^3.17.3"
   },
   "dependencies": {
-    "@thombruce/tnt": "^1.0.0-alpha.2",
-    "@thombruce/tnt-content": "^1.0.0-alpha.2",
-    "@thombruce/tnt-fancy": "^1.0.0-alpha.2",
-    "@thombruce/tnt-web": "^1.0.0-alpha.2"
+    "@thombruce/tnt": "^1.0.0-alpha.5",
+    "@thombruce/tnt-content": "^1.0.0-alpha.6",
+    "@thombruce/tnt-fancy": "^1.0.0-alpha.5",
+    "@thombruce/tnt-web": "^1.0.0-alpha.5"
   }
 }
