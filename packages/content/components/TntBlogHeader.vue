@@ -16,7 +16,7 @@ div.mb-5
 
     div.space-y-4
       h1(class="text-4xl font-extrabold") {{ page.title }}
-      p(v-if="page.description" style="color: var(--ui-text-muted);") {{ page.description }}
+      p(v-if="page.headline || page.description" style="color: var(--ui-text-muted);") {{ page.headline || page.description }}
 
     div
       UButton(

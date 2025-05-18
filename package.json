@@ -1,6 +1,6 @@
 {
   "name": "@thombruce/tnt-template",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -20,8 +20,8 @@
     "nuxt": "^3.17.3"
   },
   "dependencies": {
-    "@thombruce/tnt": "^1.0.0-alpha.5",
-    "@thombruce/tnt-content": "^1.0.0-alpha.6",
+    "@thombruce/tnt": "^1.0.0-alpha.7",
+    "@thombruce/tnt-content": "^1.0.0-alpha.7",
     "@thombruce/tnt-fancy": "^1.0.0-alpha.5",
     "@thombruce/tnt-web": "^1.0.0-alpha.5"
   }
