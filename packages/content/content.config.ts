@@ -3,6 +3,7 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 // Reusable author
 export const author = z.object({
   name: z.string(),
+  title: z.string().optional(),
   avatar: z.object({ src: z.string() }).optional(),
   to: z.string().url().optional(),
 })
