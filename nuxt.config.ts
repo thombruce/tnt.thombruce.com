@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     og: {
       component: 'TntColor',
       website: null,
-      color: null,
+      color: '#e7000b',
       image: null,
     }
   },
