@@ -13,6 +13,7 @@ export default defineContentConfig({
           '.*/**/*',
           '*blog/**/*',
           '*docs/**/*',
+          '*testimonials/**/*',
         ]
       },
       type: 'page',
@@ -56,6 +57,23 @@ export default defineContentConfig({
         ...global,
         layout: z.string().default('doc'),
         category: z.string().optional(),
+      })
+    }),
+    testimonials: defineCollection({
+      source: [
+        {
+          include: '*testimonials/**/*',
+          exclude: [
+            '*testimonials/**/.*',
+            '*testimonials/**/.*/**/*',
+          ]
+        },
+        { include: '*testimonials/**/.navigation.y?(a)ml', },
+      ],
+      type: 'page',
+      schema: z.object({
+        ...global,
+        highlight: z.string(),
       })
     }),
   }

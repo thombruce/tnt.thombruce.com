@@ -28,6 +28,7 @@ export default defineNuxtConfig({
         /* Custom content collections */
         'blog',
         'docs',
+        'testimonials',
       ],
     },
   },
