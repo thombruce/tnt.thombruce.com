@@ -8,7 +8,7 @@ const mapContentNavToUI = (items: ContentNavigationItem[]): NavigationMenuItem[]
       description: item.description as string,
       icon: item.icon as string,
       to: item.path as string,
-      children: item.children && !item.hideChildren ? mapContentNavToUI(item.children.filter(c => c.path !== item.path)) : undefined,
+      children: item.children && !item.hideChildren ? mapContentNavToUI(item.showIndex ? item.children : item.children.filter(c => c.path !== item.path)) : undefined,
       defaultOpen: true,
       sort: item.stem,
     }

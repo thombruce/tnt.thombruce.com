@@ -1,6 +1,6 @@
 {
   "name": "@thombruce/tnt-web",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.10",
   "type": "module",
   "main": "./nuxt.config.ts",
   "publishConfig": {
