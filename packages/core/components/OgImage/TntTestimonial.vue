@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   testimonial: '',
   author: undefined,
-  color: '#000000',
+  color: undefined,
 })
 
 // fallback to config color
