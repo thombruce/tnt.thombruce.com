@@ -13,7 +13,7 @@ export default defineContentConfig({
           '.*/**/*',
           '*blog/**/*',
           '*docs/**/*',
-          // '*about/*testimonials/**/*',
+          '*testimonials/**/*',
         ]
       },
       type: 'page',
@@ -59,23 +59,24 @@ export default defineContentConfig({
         category: z.string().optional(),
       })
     }),
-    // testimonials: defineCollection({
-    //   source: [
-    //     {
-    //       include: '*about/*testimonials/**/*',
-    //       exclude: [
-    //         '*about/*testimonials/**/.*',
-    //         '*about/*testimonials/**/.*/**/*',
-    //       ]
-    //     },
-    //     { include: '*about/*testimonials/**/.navigation.y?(a)ml', },
-    //   ],
-    //   type: 'page',
-    //   schema: z.object({
-    //     ...global,
-    //     highlight: z.string(),
-    //   })
-    // }),
+    testimonials: defineCollection({
+      source: [
+        {
+          include: '*testimonials/**/*',
+          exclude: [
+            '*testimonials/**/.*',
+            '*testimonials/**/.*/**/*',
+          ]
+        },
+        { include: '*testimonials/**/.navigation.y?(a)ml', },
+      ],
+      type: 'page',
+      schema: z.object({
+        ...global,
+        highlight: z.string(),
+        ogComponent: z.string().default('TntTestimonial'),
+      })
+    }),
   }
 })
 

@@ -8,7 +8,20 @@ export default defineNuxtConfig({
     description: null,
     url: 'https://tnt.thombruce.com',
     copyright: 'Copyright © All rights reserved',
-    nav: true,
+    nav: [
+      { label: 'Home', icon: 'i-lucide:house', to: '/' },
+      { label: 'Docs', icon: 'i-lucide:book', to: '/docs' },
+      { label: 'Blog', icon: 'i-lucide:pen', to: '/blog' },
+      {
+        label: 'About',
+        icon: 'i-lucide:info',
+        to: '/about',
+        children: [
+          { label: 'About TNT', description: 'How and why TNT exists', icon: 'i-lucide:info', to: '/about' },
+          { label: 'Testimonials', description: 'What are people saying about TNT?', icon: 'i-lucide:message-square-heart', to: '/testimonials' },
+        ],
+      },
+    ],
     backgroundPattern: false,
     ogComponent: 'TntColor',
     og: {
@@ -28,7 +41,7 @@ export default defineNuxtConfig({
         /* Custom content collections */
         'blog',
         'docs',
-        // 'testimonials',
+        'testimonials',
       ],
     },
   },
