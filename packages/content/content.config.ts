@@ -9,7 +9,6 @@ export const author = z.object({
 })
 
 export const og = z.object({
-  component: z.string().optional(),
   title: z.string().optional(),
   description: z.string().optional(),
   icon: z.string().optional(),
@@ -25,6 +24,7 @@ export const og = z.object({
 // Global keys shared by all content pages
 export const global = {
   layout: z.string().optional(),
+  ogComponent: z.string().optional(),
   og: og.optional(),
   title: z.string(),
   icon: z.string().optional(),

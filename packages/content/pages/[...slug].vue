@@ -22,7 +22,7 @@ const { data: navItems } = await useAsyncData(`tntNav-for-${collection}`, () => 
 
 const layout = (page.value?.layout || 'default') as LayoutKey
 
-defineOgImageComponent(page.value?.og?.component || useSiteConfig().og?.component || 'TntColor',
+defineOgImageComponent(page.value?.ogComponent || useSiteConfig().ogComponent || 'TntColor',
   {
     /* TntColor; BrandedLogo, Frame, Nuxt, NuxtSeo, Pergel, SimpleBlog, UnJs, Wave, WithEmoji */
     title: page.value?.og?.title || page.value?.title || null,
@@ -66,27 +66,8 @@ defineOgImageComponent(page.value?.og?.component || useSiteConfig().og?.componen
     // contributors, // TODO: This is too specific to implement at this time; revisit.
 
     /* TntTestimonial */
-
-    // TODO: We must figure out how testimonial ought to be expected to be passed
-    //       from a page to our component. It is strictly a kind of weird idea to
-    //       have like... single-testimonial pages that might have properties like
-    //       testimonial text and author defined. But... it is handy to have that
-    //       component exist and therefore to enable the passing of those properties
-    //       here? Hmm... but such properties should not be defined on all pages for
-    //       general purposes. We are going to need to have distinct pages for certain
-    //       collections that enable the overriding of how defineOgImageComponent works.
-    //
-    // We should in that case also consider whether any more of the actual structure
-    // of the pages represented by this document can be moved into the reusable layout
-    // documents.
-    //
-    // For now, we leave TntTestimonial functionality as an exercise for the future with
-    // these considerations still to be made.
-
-    // TODO: Should testimonial also be an object having text and author parts?
-    //       But author is otherwise already well-defined separately 🤔
-    // testimonial: null, // TODO: Not yet used by any ogImage component
-    // author: null, // TODO: Not yet used by any ogImage component
+    testimonial: page.value?.headline, // NOTE: We reuse headline to avoid having to define a custom .testimonial value used only for this OgImage component
+    author: page.value?.author,
   }
 )
 </script>

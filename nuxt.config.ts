@@ -10,8 +10,8 @@ export default defineNuxtConfig({
     copyright: 'Copyright © All rights reserved',
     nav: true,
     backgroundPattern: false,
+    ogComponent: 'TntColor',
     og: {
-      component: 'TntColor',
       website: null,
       color: '#e7000b',
       image: null,

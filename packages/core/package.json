@@ -1,6 +1,6 @@
 {
   "name": "@thombruce/tnt",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.11",
   "type": "module",
   "main": "./nuxt.config.ts",
   "style": "./assets/css/main.css",
