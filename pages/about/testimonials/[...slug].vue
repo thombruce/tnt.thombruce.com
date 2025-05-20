@@ -3,7 +3,7 @@ import type { LayoutKey } from '#build/types/layouts'
 
 const route = useRoute()
 
-const collection = 'testimonials'
+const collection = 'pages'
 
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection(collection).path(route.path).first()
@@ -17,7 +17,7 @@ defineOgImageComponent('TntTestimonial',
     color: page.value?.og?.color || null,
 
     /* TntTestimonial */
-    testimonial: page.value?.highlight,
+    testimonial: page.value?.meta?.highlight,
     author: page.value?.author,
   }
 )

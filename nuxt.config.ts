@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     name: 'TNT',
     description: null,
     url: 'https://tnt.thombruce.com',
-    copyright: null,
+    copyright: 'Copyright © All rights reserved',
     nav: true,
     backgroundPattern: false,
     og: {
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
         /* Custom content collections */
         'blog',
         'docs',
-        'testimonials',
+        // 'testimonials',
       ],
     },
   },
