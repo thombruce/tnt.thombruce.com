@@ -11,7 +11,6 @@ export const author = z.object({
 export const og = z.object({
   title: z.string().optional(),
   description: z.string().optional(),
-  excerpt: z.string().optional(),
   icon: z.string().optional(),
   logo: z.string().optional(),
   headline: z.string().optional(),
@@ -30,7 +29,6 @@ export const global = {
   title: z.string(),
   icon: z.string().optional(),
   description: z.string(),
-  excerpt: z.string().optional(),
   headline: z.string(),
   image: z.string().optional(),
   images: z.array(z.string()).optional(),

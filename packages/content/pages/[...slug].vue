@@ -66,7 +66,7 @@ defineOgImageComponent(page.value?.ogComponent || useSiteConfig().ogComponent ||
     // contributors, // TODO: This is too specific to implement at this time; revisit.
 
     /* TntTestimonial */
-    testimonial: page.value?.og?.excerpt || page.value?.excerpt || null, // NOTE: We reuse headline to avoid having to define a custom .testimonial value used only for this OgImage component
+    testimonial: page.value?.og?.headline || page.value?.headline || null, // NOTE: We reuse headline to avoid having to define a custom .testimonial value used only for this OgImage component
     author: page.value?.author || null,
   }
 )
