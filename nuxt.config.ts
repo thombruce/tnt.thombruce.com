@@ -3,6 +3,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  nitro: {
+    static: true
+  },
   site: {
     name: 'TNT',
     description: null,
@@ -50,6 +53,7 @@ export default defineNuxtConfig({
     /* Custom route rules */
     '/docs': { redirect: '/docs/getting-started/installation' },
     '/docs/getting-started': { redirect: '/docs/getting-started/installation' },
+    '/docs/getting-started/installation': { prerender: true },
   },
   runtimeConfig: {
     public: {
