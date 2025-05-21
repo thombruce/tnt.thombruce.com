@@ -7,7 +7,7 @@ const { collection = 'pages' } = defineProps<{
   collection?: keyof PageCollections
 }>()
 
-const { data } = await useAsyncData('surround', () => {
+const { data } = await useAsyncData(`surround-for-${path}`, () => {
   return queryCollectionItemSurroundings(collection, path)
 })
 

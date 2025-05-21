@@ -6,6 +6,12 @@ const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
+// TODO: This only ever works if collection is the first part of the URL path.
+//       It will match 'blog' in '/blog' but not 'articles' in '/nested/articles'
+//       This is... okay. It only indicates that we ought to create custom [...slug].vue
+//       components for deeply nested collections. Unfortunately I don't think it is
+//       easily solved here unless we iterate over slugs to find the deepest matching
+//       collection... but that could yield false positives, so it isn't worth doing at all.
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections
   : 'pages'
