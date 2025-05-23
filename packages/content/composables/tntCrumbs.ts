@@ -27,6 +27,11 @@ export const tntCrumbs = async (path: string, collection: keyof PageCollections 
         icon: item.icon as string | undefined,
         to: item.path,
       })
+    } else {
+      navItems.push({
+        label: titleCase(p),
+        to: param,
+      })
     }
 
     if (item?.children) {
