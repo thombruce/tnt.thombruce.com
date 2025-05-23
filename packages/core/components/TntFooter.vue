@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { copyright, backgroundPattern } = useSiteConfig()
+const copyright = tntTranslate('nuxtSiteConfig.copyright', useSiteConfig().copyright)
+
+const { backgroundPattern } = useAppConfig()
 </script>
 
 <template lang="pug">
@@ -16,7 +18,7 @@ div(class="w-full \
           justify-between"
   )
     div(class="py-2 grow text-center")
-      p {{ copyright }}
+      p(v-if="copyright") {{ copyright }}
       p(v-if="backgroundPattern")
         a(href="https://heropatterns.com/") Hero Patterns
         |

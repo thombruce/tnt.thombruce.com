@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import type { PageCollections } from '@nuxt/content'
 
+// NOTE: We do not use tntTranslate here to avoid
+//       the unnecessary computation of titleCase(collection)
+//       in such case that teh i18n key is defined.
+// TODO: It may be worth considering a refactor of tntTranslate
+//       in order to handle a callback function.
 const { $i18n: { t: translate } } = useNuxtApp()
-
 const t = (collection: string): string => {
   const key = 'content.collections.' + collection
   if (translate(key) !== key) {

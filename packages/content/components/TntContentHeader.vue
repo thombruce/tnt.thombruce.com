@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { name, nav: navConfig } = useSiteConfig()
+const { name } = useSiteConfig()
+
+const { nav: navConfig } = useAppConfig()
 
 const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
   return tntNav(navConfig)

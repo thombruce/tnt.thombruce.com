@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    '@nuxtjs/seo',
+    'nuxt-site-config',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
