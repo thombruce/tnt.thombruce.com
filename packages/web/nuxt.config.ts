@@ -15,7 +15,16 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/seo',
+    '@nuxtjs/mdc',
   ],
+  // NOTE: Due to some bug with '@nuxtjs/mdc', we need to add 'debug'
+  //       to optimizeDeps. Bizarre but... this fixes the issue, so
+  //       we're happy.
+  vite: {
+    optimizeDeps: {
+      include: ['debug'],
+    },
+  },
 })
 
 // TODO:

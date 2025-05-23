@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     description: null,
     url: 'https://tnt.thombruce.com',
     copyright: 'Copyright © All rights reserved',
+    company: {
+      name: 'My Awesome Company', // Optional; will fallback to site.name
+      email: '', // TODO: Consider need for separate email used for legal/privacy purposes?
+      address: ``, // Optional
+      telephone: '', // Optional
+    },
     ogComponent: 'TntColor',
     og: {
       website: null,

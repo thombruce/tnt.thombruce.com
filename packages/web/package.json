@@ -10,6 +10,7 @@
     "nuxt": "^3.17.3"
   },
   "dependencies": {
+    "@nuxtjs/mdc": "^0.17.0",
     "@nuxtjs/seo": "^3.0.3"
   }
 }
