@@ -22,9 +22,22 @@ const { data: navItems } = await useAsyncData(`tntNav-for-${collection}`, () => 
 
 const layout = (page.value?.layout || 'default') as LayoutKey
 
-for (const func of useAppConfig().pageFunctions as ((page?: PagesCollectionItem | null) => void)[]) {
-  func(page.value)
-}
+tntOgImageComponent(page.value?.ogComponent, {
+  title: page.value?.og?.title || page.value?.title,
+  description: page.value?.og?.description || page.value?.description,
+  icon: page.value?.og?.icon || page.value?.icon,
+  logo: page.value?.og?.logo,
+  // siteLogo: page.value?.og?.siteLogo,
+  headline: page.value?.og?.headline || page.value?.headline,
+  website: page.value?.og?.website,
+  color: page.value?.og?.color,
+  image: page.value?.og?.image || page.value?.image,
+  // theme: page.value?.og?.theme,
+  bg: page.value?.og?.bg,
+  emoji: page.value?.og?.emoji,
+  testimonial: page.value?.og?.headline || page.value?.headline,
+  author: page.value?.author,
+})
 </script>
 
 <template lang="pug">
