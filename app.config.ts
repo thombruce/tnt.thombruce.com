@@ -26,6 +26,7 @@ export default defineAppConfig({
       children: [
         { label: 'About TNT', description: 'How and why TNT exists', icon: 'i-lucide:info', to: '/about' },
         { label: 'Testimonials', description: 'What are people saying about TNT?', icon: 'i-lucide:message-square-heart', to: '/testimonials' },
+        { label: 'Cookies', description: 'How we use cookies', icon: 'i-lucide:cookie', to: '/cookie-policy' },
       ],
     },
   ],
