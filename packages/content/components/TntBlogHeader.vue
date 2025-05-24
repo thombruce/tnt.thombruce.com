@@ -31,7 +31,6 @@ div.mb-5
 
   USeparator.py-5
 
-  //- TODO: Add multi-image support
   .block.aspect-video(v-if="page.image")
     NuxtImg.w-full.h-full.object-cover(:src="page.image" fit="cover" width="1200" height="1200")
   UCarousel(v-else-if="page.images" v-slot="{ item }" :items="page.images" :ui="{ item: 'basis-1/3' }")

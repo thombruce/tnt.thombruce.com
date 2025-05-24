@@ -3,7 +3,6 @@ import * as locales from '@nuxt/ui/locale'
 
 const { locale } = useI18n()
 
-// TODO: Move to appConfig or runtimeConfig
 const { backgroundPattern } = useAppConfig()
 </script>
 
