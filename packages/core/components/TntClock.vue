@@ -5,7 +5,7 @@
 //       components/global/ dir if that's the case.
 import { fromDate, toTime, toTimeZone, toLocalTimeZone, type ZonedDateTime } from '@internationalized/date'
 
-const { type = 'digital', timezone } = defineProps<{
+const { type = 'digital', timezone = undefined } = defineProps<{
   // TODO: Implement analog.
   type?: 'digital' | 'analog', // timer | countdown
   timezone?: string,

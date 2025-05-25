@@ -6,7 +6,7 @@ const { collection = 'pages' }: { collection?: keyof PageCollections | undefined
 
 <template lang="pug">
 NuxtLayout(name="base")
-  .grid.grid-cols-10.gap-10
+  div(class="grid grid-cols-10 gap-10")
     div(:class="($slots.toc) ? 'col-span-10 md:col-span-8' : 'col-span-10'")
       TntBreadcrumbs(:collection="collection")/
 
@@ -18,6 +18,6 @@ NuxtLayout(name="base")
 
       TntPrevNext(:collection="collection")/
 
-    .col-span-2(v-if="$slots.toc" class="hidden md:flex")
+    div(v-if="$slots.toc" class="col-span-2 hidden md:flex")
       slot(name="toc")
 </template>

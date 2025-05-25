@@ -52,7 +52,7 @@ UModal
     label="Search..."
     color="neutral"
     variant="ghost"
-    icon="i-lucide-search"
+    icon="i-lucide:search"
     class="my-2 px-2.5 py-1.5"
   )/
 

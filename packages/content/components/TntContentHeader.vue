@@ -10,18 +10,16 @@ const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
 
 <template lang="pug">
 div(class="w-full \
-           bg-neutral-50 \
-           dark:bg-neutral-900 \
+           bg-muted \
            border-b \
-           border-neutral-200 \
-           dark:border-neutral-800"
+           border-accented"
 )
   UContainer(
     class="flex \
           items-center \
           justify-between"
   )
-    .flex
+    div(class="flex")
       TntNavigationDrawer(:items="navItems")/
 
       UButton(
@@ -34,7 +32,7 @@ div(class="w-full \
 
     UNavigationMenu(:items="navItems || undefined" class="hidden md:flex w-full justify-center z-50")/
 
-    .flex
+    div(class="flex")
       TntSearch/
       TntDarkMode/
 </template>

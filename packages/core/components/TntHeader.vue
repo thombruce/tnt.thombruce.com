@@ -4,11 +4,9 @@ const { name } = useSiteConfig()
 
 <template lang="pug">
 div(class="w-full \
-           bg-neutral-50 \
-           dark:bg-neutral-900 \
+           bg-muted \
            border-b \
-           border-neutral-200 \
-           dark:border-neutral-800"
+           border-accented"
 )
   UContainer(
     class="flex \
@@ -22,6 +20,6 @@ div(class="w-full \
       variant="ghost"
       class="my-2 px-2.5 py-1.5 font-extrabold"
     )/
-    .flex
+    div(class="flex")
       TntDarkMode/
 </template>

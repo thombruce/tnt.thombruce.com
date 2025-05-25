@@ -23,7 +23,7 @@ div(class="flex \
     v-if="prev"
     :label="prev.title"
     :to="prev.path"
-    icon="lucide:chevron-left"
+    icon="i-lucide:chevron-left"
     leading
     color="neutral"
     variant="ghost"
@@ -35,7 +35,7 @@ div(class="flex \
     v-if="next"
     :label="next.title"
     :to="next.path"
-    icon="lucide:chevron-right"
+    icon="i-lucide:chevron-right"
     trailing
     color="neutral"
     variant="ghost"

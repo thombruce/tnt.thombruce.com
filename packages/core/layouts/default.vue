@@ -6,8 +6,8 @@ const { collection = 'pages' }: { collection?: keyof PageCollections | undefined
 
 <template lang="pug">
 NuxtLayout(name="base")
-  .grid.grid-cols-10.gap-10
-    .col-span-10
+  div(class="grid grid-cols-10 gap-10")
+    div(class="col-span-10")
       TntBreadcrumbs(:collection="collection")/
       slot
 </template>

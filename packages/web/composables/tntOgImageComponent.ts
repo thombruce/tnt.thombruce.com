@@ -1,5 +1,3 @@
-import type { PagesCollectionItem } from '@nuxt/content'
-
 // Four options:
 // 1. Pass an args instead with type: { component: String, title: String, description: String, ... }
 // 2. Pass individual arguments like: (component: String, title: String, description: String, ...)

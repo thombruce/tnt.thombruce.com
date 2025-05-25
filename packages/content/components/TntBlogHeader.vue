@@ -8,15 +8,15 @@ const { page } = defineProps<{
 </script>
 
 <template lang="pug">
-div.mb-5
-  div.space-y-2
-    div.space-x-3
+div(class="mb-5")
+  div(class="space-y-2")
+    div(class="space-x-3")
       UBadge(v-if="page.category" color="neutral" variant="outline") {{ page.category }}
       strong(v-if="page.date") {{ new Date(page.date).toLocaleDateString() }}
 
-    div.space-y-4
+    div(class="space-y-4")
       h1(class="text-4xl font-extrabold") {{ page.title }}
-      p(v-if="page.headline || page.description" style="color: var(--ui-text-muted);") {{ page.headline || page.description }}
+      p(v-if="page.headline || page.description" class="text-muted") {{ page.headline || page.description }}
 
     div
       UButton(
@@ -29,11 +29,11 @@ div.mb-5
         color="neutral"
       )
 
-  USeparator.py-5
+  USeparator(class="py-5")
 
-  .block.aspect-video(v-if="page.image")
-    NuxtImg.w-full.h-full.object-cover(:src="page.image" fit="cover" width="1200" height="1200")
+  div(class="block aspect-video")(v-if="page.image")
+    NuxtImg(:src="page.image" fit="cover" width="1200" height="1200" class="w-full h-full object-cover")
   UCarousel(v-else-if="page.images" v-slot="{ item }" :items="page.images" :ui="{ item: 'basis-1/3' }")
-    .block.aspect-square(v-if="item")
-      NuxtImg.w-full.h-full.object-cover.rounded-lg(:src="String(item)" fit="cover" width="1200" height="1200")
+    div(class="block aspect-square")(v-if="item")
+      NuxtImg(:src="String(item)" fit="cover" width="1200" height="1200" class="w-full h-full object-cover rounded-lg")
 </template>

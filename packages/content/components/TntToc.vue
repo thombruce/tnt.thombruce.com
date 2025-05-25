@@ -2,7 +2,7 @@
 import type { Toc } from '@nuxt/content';
 import type { NavigationMenuItem } from '@nuxt/ui';
 
-const { toc } = defineProps<{
+const { toc = undefined } = defineProps<{
   toc?: Toc
 }>()
 

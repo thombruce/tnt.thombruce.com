@@ -7,17 +7,17 @@
 -->
 
 <script setup lang="ts">
-const { language, filename } = defineProps<{
+const { language = undefined, filename = undefined } = defineProps<{
   language?: string
   filename?: string
 }>()
 </script>
 
 <template lang="pug">
-pre(class="relative bg-neutral-100 dark:bg-neutral-950")
+pre(class="relative bg-neutral-800 dark:bg-neutral-950")
   slot/
   div(
     v-if="language || filename"
-    class="absolute top-0 right-0 px-4 py-2 text-neutral-500"
+    class="absolute top-0 right-0 px-4 py-2 text-dimmed"
   ) {{ language }}{{ language && filename ? ': ' : '' }}{{ filename }}
 </template>

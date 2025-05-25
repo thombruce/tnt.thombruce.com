@@ -19,19 +19,19 @@ const { data: items } = await useAsyncData(`tntList-for-${collection}-${path}`, 
 </script>
 
 <template lang="pug">
-div.my-4.space-y-4
-  ULink.block(v-if="items?.length" v-for="item in items" :to="item.path")
+div(class="my-4 space-y-4")
+  ULink(v-if="items?.length" v-for="item in items" :to="item.path" class="block")
     UCard
-      .grid.grid-cols-10.gap-10
+      div(class="grid grid-cols-10 gap-10")
         div(:class="item.image ? 'col-span-7' : 'col-span-10'")
-          div.space-x-3
+          div(class="space-x-3")
             //- TODO: Wouldn't it be cool to be able to define custom metadata?
             //- Perhaps we can achieve this with scoped slots passing the retrieved
             //- page data back to the component invocation.
             UBadge(v-if="'category' in item && item.category" color="neutral" variant="outline") {{ item.category }}
             strong(v-if="'date' in item && item.date") {{ new Date(item.date).toLocaleDateString() }}
-          div.space-y-2
-            h2.text-2xl.font-extrabold {{ item.title }}
+          div(class="space-y-2")
+            h2(class="text-2xl font-extrabold") {{ item.title }}
             p {{ item.description }}
           div
             div(
@@ -41,9 +41,9 @@ div.my-4.space-y-4
             )
               UAvatar(:src="author.avatar?.src" size="2xs")
               span {{ author.name }}
-        .col-span-3(v-if="item.image")
-          .block.aspect-square
-            NuxtImg.w-full.h-full.object-cover(:src="item.image" fit="cover" width="600" height="600")
+        div(class="col-span-3")(v-if="item.image")
+          div(class="block aspect-square")
+            NuxtImg(:src="item.image" fit="cover" width="600" height="600" class="w-full h-full object-cover")
   div(v-else)
     p No items to show.
 </template>

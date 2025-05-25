@@ -6,11 +6,9 @@ const { backgroundPattern } = useAppConfig()
 
 <template lang="pug">
 div(class="w-full \
-           bg-neutral-50 \
-           dark:bg-neutral-900 \
+           bg-muted \
            border-t \
-           border-neutral-200 \
-           dark:border-neutral-800"
+           border-accented"
 )
   UContainer(
     class="flex \
