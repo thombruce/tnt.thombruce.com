@@ -1,6 +1,8 @@
 import type { ContentNavigationItem, PageCollections } from '@nuxt/content'
 import type { BreadcrumbItem } from '@nuxt/ui'
 
+import _startCase from 'lodash/startCase'
+
 export const tntCrumbs = async (path: string, collection: keyof PageCollections = 'pages') => {
   const params = path.split('/').filter(item => item)
 
@@ -29,7 +31,7 @@ export const tntCrumbs = async (path: string, collection: keyof PageCollections 
       })
     } else {
       navItems.push({
-        label: titleCase(p),
+        label: _startCase(p),
         to: param,
       })
     }

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { PageCollections } from '@nuxt/content'
 
+import _startCase from 'lodash/startCase'
+
 // NOTE: We do not use tntTranslate here to avoid
-//       the unnecessary computation of titleCase(collection)
+//       the unnecessary computation of startCase(collection)
 //       in such case that teh i18n key is defined.
 // TODO: It may be worth considering a refactor of tntTranslate
 //       in order to handle a callback function.
@@ -12,7 +14,7 @@ const t = (collection: string): string => {
   if (translate(key) !== key) {
     return translate(key)
   } else {
-    return titleCase(collection)
+    return _startCase(collection)
   }
 }
 
