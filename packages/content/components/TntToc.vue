@@ -32,5 +32,10 @@ const navItems: NavigationMenuItem[] | undefined = toc?.links.map((t) => {
 <template lang="pug">
 div(v-if="navItems")
   strong On this page
-  UNavigationMenu(:items="navItems || undefined" orientation="vertical" variant="link")/
+  UNavigationMenu(
+    :items="navItems || undefined"
+    orientation="vertical"
+    variant="link"
+    :unmount-on-hide="false"
+  )/
 </template>

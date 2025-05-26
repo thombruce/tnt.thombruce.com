@@ -20,5 +20,10 @@ UDrawer(v-model:open="open" direction="left" class="md:hidden")
     class="my-2 px-2.5 py-1.5"
   )
   template(#content)
-    UNavigationMenu(:items="navItems || undefined" orientation="vertical" @click="open = false")/
+    UNavigationMenu(
+      :items="navItems || undefined"
+      orientation="vertical"
+      :unmount-on-hide="false"
+      @click="open = false"
+    )/
 </template>

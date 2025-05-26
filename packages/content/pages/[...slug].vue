@@ -43,7 +43,11 @@ tntOgImageComponent(page.value?.ogComponent, {
 <template lang="pug">
 NuxtLayout(:name="layout" :collection="collection")
   template(#nav)
-    UNavigationMenu(:items="navItems || undefined" orientation="vertical" class="")/
+    UNavigationMenu(
+      :items="navItems || undefined"
+      orientation="vertical"
+      :unmount-on-hide="false"
+    )/
 
   template(#header)
     TntBlogHeader(v-if="page" :page="page")/
