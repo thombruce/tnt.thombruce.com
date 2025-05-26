@@ -5,9 +5,15 @@ icon: i-lucide:cookie
 layout: article
 navigation:
   title: Cookies
+# Company Details
+companyName: TNT # Required
+website: tnt.thombruce.com # Required
+email: thom@thombruce.com # Required
+address: # Optional
+telephone: # Optional
 ---
 
-**TNT** (“we”, “us”, or “our”) respects your privacy and is committed to protecting it through our compliance with this Cookie Policy. This policy explains how we use cookies and similar tracking technologies on our website, **tnt.thombruce.com** ("Website"), and your rights and choices under applicable privacy laws, including the **General Data Protection Regulation (GDPR)**.
+**{{ $doc.meta.companyName }}** (“we”, “us”, or “our”) respects your privacy and is committed to protecting it through our compliance with this Cookie Policy. This policy explains how we use cookies and similar tracking technologies on our website, **{{ $doc.meta.website }}** ("Website"), and your rights and choices under applicable privacy laws, including the **General Data Protection Regulation (GDPR)**.
 
 ---
 
@@ -63,7 +69,7 @@ You have the right to:
 * Object to processing
 * Withdraw your consent at any time
 
-To exercise your rights, contact us at thom@thombruce.com.
+To exercise your rights, contact us at {{ $doc.meta.email }}.
 
 ---
 
@@ -99,6 +105,10 @@ We encourage you to review their privacy and cookie policies.
 
 For any questions or concerns about this Cookie Policy or our data practices, please contact:
 
-**TNT**
+**{{ $doc.meta.companyName }}**
 
-thom@thombruce.com
+{{ $doc.meta.address }}
+
+{{ $doc.meta.email }}
+
+{{ $doc.meta.telephone }}
