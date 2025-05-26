@@ -22,7 +22,6 @@ export default defineNuxtConfig({
     /* Custom route rules */
     '/docs': { redirect: '/docs/getting-started/installation' },
     '/docs/getting-started': { redirect: '/docs/getting-started/installation' },
-    '/docs/getting-started/installation': { prerender: true },
   },
   runtimeConfig: {
     public: {
