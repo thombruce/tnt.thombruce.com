@@ -12,7 +12,7 @@ export const tntCrumbs = async (path: string, collection: keyof PageCollections 
 
   const navItems: BreadcrumbItem[] = home
     ? [{ label: home.title, icon: home.icon as string | undefined, to: home.path }]
-    : [{ label: 'Home', icon: 'i-lucide:house', to: '/' }]
+    : [{ label: 'Home', icon: 'lucide:house', to: '/' }]
 
   let navigation: ContentNavigationItem[] = await queryCollectionNavigation(collection, ['icon'])
 

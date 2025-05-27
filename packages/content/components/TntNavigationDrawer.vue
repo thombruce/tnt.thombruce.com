@@ -14,7 +14,7 @@ const open = ref(false)
 <template lang="pug">
 UDrawer(v-model:open="open" direction="left" class="md:hidden")
   UButton(
-    icon="i-lucide:menu"
+    icon="lucide:menu"
     color="neutral"
     variant="ghost"
     class="my-2 px-2.5 py-1.5"

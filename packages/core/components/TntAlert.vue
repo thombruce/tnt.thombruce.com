@@ -11,16 +11,16 @@ let color: "primary" | "secondary" | "success" | "info" | "warning" | "error" | 
 
 if (success) {
   color = "success"
-  icon = "i-lucide:check" // "fluent-color:checkmark-circle-16"
+  icon = "lucide:check" // "fluent-color:checkmark-circle-16"
 } else if (info) {
   color = "info"
-  icon = "i-lucide:info" // "fluent-color:question-circle-16"
+  icon = "lucide:info" // "fluent-color:question-circle-16"
 } else if (warning) {
   color = "warning"
-  icon = "i-lucide:triangle-alert" // "fluent-color:error-circle-16"
+  icon = "lucide:triangle-alert" // "fluent-color:error-circle-16"
 } else if (error) {
   color = "error"
-  icon = "i-lucide:ban" // "fluent-color:dismiss-circle-16"
+  icon = "lucide:ban" // "fluent-color:dismiss-circle-16"
 }
 
 const ui = large ? { title: 'text-lg md:text-xl', icon: 'text-2xl md:text-3xl' } : { icon: 'text-xl' }

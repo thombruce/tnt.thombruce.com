@@ -1,7 +1,7 @@
 ---
 title: Cookie Policy
 description:
-icon: i-lucide:cookie
+icon: lucide:cookie
 layout: article
 navigation:
   title: Cookies

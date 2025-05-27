@@ -54,7 +54,10 @@ export default defineContentConfig({
       source: [
         {
           include: '**/*',
-          exclude: []
+          exclude: [
+            '.*',
+            '.*/**/*',
+          ]
         },
       ],
       type: 'page',

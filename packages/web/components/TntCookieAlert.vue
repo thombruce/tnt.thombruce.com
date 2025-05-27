@@ -41,13 +41,13 @@ div(v-if="gaID && !consented && !rejected && open" class="fixed bottom-5 w-scree
     :actions="[ \
       { \
         label: 'Accept', \
-        icon: 'i-lucide:cookie', \
+        icon: 'lucide:cookie', \
         color: 'success', \
         onClick: acceptAll \
       }, \
       { \
         label: 'Reject', \
-        icon: 'i-lucide:ban', \
+        icon: 'lucide:ban', \
         color: 'error', \
         onClick: rejectAll, \
       }, \

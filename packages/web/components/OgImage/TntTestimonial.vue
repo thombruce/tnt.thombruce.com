@@ -20,8 +20,8 @@ const color = computed(() => {
 <template>
   <div class="h-full w-full flex items-start justify-start text-white" :class="`bg-[${color}]`">
     <div class="w-full h-full flex absolute top-0 left-0">
-      <span class="text-9xl opacity-42 absolute top-10 left-10"><Icon name="i-lucide:quote" mode="svg" /></span>
-      <span class="text-9xl opacity-42 absolute bottom-20 right-10"><Icon name="i-lucide:quote" mode="svg" /></span>
+      <span class="text-9xl opacity-42 absolute top-10 left-10"><Icon name="lucide:quote" mode="svg" /></span>
+      <span class="text-9xl opacity-42 absolute bottom-20 right-10"><Icon name="lucide:quote" mode="svg" /></span>
     </div>
 
     <div class="flex items-start justify-start h-full">

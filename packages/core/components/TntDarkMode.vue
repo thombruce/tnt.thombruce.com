@@ -15,8 +15,8 @@ const isDark = computed({
 ClientOnly(v-if="!colorMode?.forced")
   USwitch(
     v-model="isDark"
-    unchecked-icon="i-lucide:sun"
-    checked-icon="i-lucide:moon"
+    unchecked-icon="lucide:sun"
+    checked-icon="lucide:moon"
     class="my-2 px-2.5 py-1.5"
     color="neutral"
   )/
