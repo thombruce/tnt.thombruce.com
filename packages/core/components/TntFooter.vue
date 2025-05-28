@@ -1,15 +1,31 @@
 <script setup lang="ts">
+import { tv } from 'tailwind-variants'
+
 const copyright = tntTranslate('nuxtSiteConfig.copyright', useSiteConfig().copyright)
 
 const { backgroundPattern } = useAppConfig()
+
+const { /* color = 'neutral', */ variant = 'solid' } = defineProps<{
+  // color?: 'neutral' | 'primary'
+  variant?: 'solid' | 'ghost'
+  // TODO: Size - it would be nice to allow larger text; given that this
+  //       ought to be a fixed/sticky element though, we must give consideration
+  //       to the space occupied when positioning other content.
+}>()
+
+const footer = computed(() => tv({
+  base: 'w-full',
+  variants: {
+    variant: {
+      solid: 'bg-muted border-b border-accented',
+      ghost: 'bg-neutral border-none',
+    },
+  }
+}))
 </script>
 
 <template lang="pug">
-div(class="w-full \
-           bg-muted \
-           border-t \
-           border-accented"
-)
+div(:class="footer({ variant })")
   UContainer(
     class="flex \
           items-center \

@@ -1,11 +1,14 @@
 <script lang="ts" setup>
 import type { PageCollections } from '@nuxt/content';
 
-const { collection = 'pages' }: { collection?: keyof PageCollections | undefined } = useAttrs()
+const attrs: { theme?: 'solid' | 'ghost', collection?: keyof PageCollections | undefined } = useAttrs()
+
+const theme = attrs.theme
+const collection = attrs.collection || 'pages'
 </script>
 
 <template lang="pug">
-NuxtLayout(name="base")
+NuxtLayout(name="base" :theme="theme")
   div(class="grid grid-cols-10 gap-10")
     div(:class="($slots.toc) ? 'col-span-10 md:col-span-8' : 'col-span-10'")
       TntBreadcrumbs(:collection="collection")/

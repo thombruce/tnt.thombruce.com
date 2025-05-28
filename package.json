@@ -20,9 +20,6 @@
     "nuxt": "^3.17.3"
   },
   "dependencies": {
-    "@thombruce/tnt": "^1.0.0-alpha.11",
-    "@thombruce/tnt-content": "^1.0.0-alpha.11",
-    "@thombruce/tnt-fancy": "^1.0.0-alpha.5",
-    "@thombruce/tnt-web": "^1.0.0-alpha.11"
+    "@thombruce/tnt": "^1.0.0-alpha.11"
   }
 }

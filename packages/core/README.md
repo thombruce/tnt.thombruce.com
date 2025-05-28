@@ -1,4 +1,4 @@
-# TNT Fancy
+# TNT
 
 ## Credits
 

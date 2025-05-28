@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 import type { LayoutKey } from '#build/types/layouts'
-import type { PageCollections, PagesCollectionItem } from '@nuxt/content'
+import type { PageCollections } from '@nuxt/content'
 
 const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
+
+const { theme } = useAppConfig()
 
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections
@@ -41,7 +43,7 @@ tntOgImageComponent(page.value?.ogComponent, {
 </script>
 
 <template lang="pug">
-NuxtLayout(:name="layout" :collection="collection")
+NuxtLayout(:name="layout" :theme="theme" :collection="collection")
   template(#nav)
     UNavigationMenu(
       :items="navItems || undefined"
