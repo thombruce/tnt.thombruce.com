@@ -1,6 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
-import { global } from '@thombruce/tnt-content/content.config'
+import { global } from '@thombruce/tnt/content.config'
 
 export default defineContentConfig({
   collections: {
