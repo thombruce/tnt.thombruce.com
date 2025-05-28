@@ -64,4 +64,16 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' }
     ]
   },
+  // PATCH: https://github.com/nuxt/nuxt/issues/32175#issuecomment-2898200099
+  vite: {
+    $server: {
+      build: {
+        rollupOptions: {
+          output: {
+            preserveModules: true
+          }
+        }
+      }
+    },
+  },
 })
