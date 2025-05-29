@@ -5,9 +5,9 @@ const { name } = useSiteConfig()
 
 const { nav: navConfig } = useAppConfig()
 
-const { /* color = 'neutral', */ variant = 'solid' } = defineProps<{
+const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
-  variant?: 'solid' | 'ghost'
+  variant?: 'bordered' | 'solid' | 'ghost'
   // TODO: Size - it would be nice to allow larger text; given that this
   //       ought to be a fixed/sticky element though, we must give consideration
   //       to the space occupied when positioning other content.
@@ -21,10 +21,20 @@ const navbar = computed(() => tv({
   base: 'w-full',
   variants: {
     variant: {
-      solid: 'bg-muted border-b border-accented',
-      ghost: 'bg-neutral border-none',
+      bordered: 'bg-muted border-b border-accented',
+      solid: 'bg-(--ui-bg)',
+      ghost: 'bg-transparent',
     },
-  }
+  },
+  compoundVariants: [
+    {
+      variant: ['solid', 'ghost'],
+      class: 'border-none',
+    },
+  ],
+  defaultVariants: {
+    variant: 'bordered',
+  },
 }))
 </script>
 
