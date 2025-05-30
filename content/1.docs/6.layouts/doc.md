@@ -1,6 +1,5 @@
 ---
 title: Doc
-category: TNT Content
 layout: doc
 ---
 

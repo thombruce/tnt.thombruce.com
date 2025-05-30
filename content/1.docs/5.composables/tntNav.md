@@ -1,6 +1,5 @@
 ---
 title: tntNav
-category: TNT Content
 ---
 
 ```ts

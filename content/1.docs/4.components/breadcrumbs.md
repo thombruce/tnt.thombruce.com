@@ -1,7 +1,6 @@
 ---
 title: Breadcrumbs
 description: Provides Breadcrumbs for pages published with TNT Content.
-category: TNT Content
 ---
 
 ```js
