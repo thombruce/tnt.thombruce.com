@@ -1,0 +1,6 @@
+Configure site variables in `nuxt.config.ts`
+Configure app in `app.config.ts` @optional
+Customize and activate Cookie Policy at `content/.cookie-policy.md` (rename to `content/cookie-policy.md` to activate) @optional
+Add Google Analytics environment variable (enabling analytics) @optional
+Restyle app by editing `assets/css/main.css` @optional
+Add custom content to `content/`
