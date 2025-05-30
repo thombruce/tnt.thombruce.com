@@ -7,16 +7,18 @@
 -->
 
 <script setup lang="ts">
-const { language = undefined, filename = undefined } = defineProps<{
+const { class: klass = undefined, language = undefined, filename = undefined } = defineProps<{
+  class?: string
   language?: string
   filename?: string
 }>()
 </script>
 
 <template lang="pug">
-pre(class="relative bg-neutral-800 dark:bg-neutral-950")
-  slot/
-  div(
+figure(class="relative")
+  pre(class="bg-neutral-800 dark:bg-neutral-950" :class="klass")
+    slot/
+  figcaption(
     v-if="language || filename"
     class="absolute top-0 right-0 px-4 py-2 text-dimmed"
   ) {{ language }}{{ language && filename ? ': ' : '' }}{{ filename }}
