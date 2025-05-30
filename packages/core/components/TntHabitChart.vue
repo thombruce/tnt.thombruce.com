@@ -70,7 +70,7 @@ table(class="not-prose w-full")
           UButton(
             color="neutral"
             variant="subtle"
-            class="aspect-square size-5"
+            class="w-full aspect-square"
           )/
           //- TODO: Even at the smallest size value, these buttons are kinda big...
           //-       We want to be able to go even smaller with the table items.
