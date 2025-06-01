@@ -6,7 +6,7 @@ const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
-const { theme } = useAppConfig()
+const { theme, defaultLayout } = useAppConfig()
 
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections
@@ -22,7 +22,7 @@ const { data: navItems } = await useAsyncData(`tntNav-for-${collection}`, () => 
   //       end depths.
 })
 
-const layout = (page.value?.layout || 'default') as LayoutKey
+const layout = (page.value?.layout || defaultLayout || 'default') as LayoutKey
 
 definePageMeta({
   colorMode: pageMeta.colorMode
@@ -81,6 +81,6 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
     :order="typeof page.list === 'object' && page.list.order ? page.list.order : undefined"
   )
 
-  template(#toc)
+  template(#toc v-if="page?.body.toc?.links.length")
     TntToc(:toc="page?.body.toc")
 </template>

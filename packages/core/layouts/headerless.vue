@@ -10,8 +10,6 @@ NuxtLayout(name="base")
     div(class="col-span-10")
       TntBreadcrumbs(:collection="collection")/
 
-      slot(name="header")
-
       slot
 
       TntPrevNext(:collection="collection")/

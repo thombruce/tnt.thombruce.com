@@ -80,7 +80,7 @@ We use Lerna to version and publish monorepo packages. However, we are mirroring
 
 Presently, Lerna will `git push origin && git push origin --tags` after versioning. For completeness, we want it to:
 
-```sh
+```bash
 git push gitlab && git push gitlab --tags && git push github && git push github --tags
 ```
 

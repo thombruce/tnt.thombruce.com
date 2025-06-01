@@ -33,6 +33,7 @@ export default defineAppConfig({
   theme: undefined,
   colorMode: null,
   backgroundPattern: 'circuit board',
+  defaultLayout: null,
   ui: {
     colors: {
       primary: 'red',
