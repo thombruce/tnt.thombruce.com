@@ -65,15 +65,15 @@ export default defineNuxtConfig({
     ]
   },
   // PATCH: https://github.com/nuxt/nuxt/issues/32175#issuecomment-2898200099
-  // vite: {
-  //   $server: {
-  //     build: {
-  //       rollupOptions: {
-  //         output: {
-  //           preserveModules: true
-  //         }
-  //       }
-  //     }
-  //   },
-  // },
+  vite: {
+    $server: {
+      build: {
+        rollupOptions: {
+          output: {
+            preserveModules: true
+          }
+        }
+      }
+    },
+  },
 })
