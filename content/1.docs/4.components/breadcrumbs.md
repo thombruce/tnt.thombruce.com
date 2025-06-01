@@ -3,7 +3,7 @@ title: Breadcrumbs
 description: Provides Breadcrumbs for pages published with TNT Content.
 ---
 
-```js
+```vue
 <TntBreadcrumbs collection="docs" />
 ```
 

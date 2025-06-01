@@ -5,7 +5,7 @@ description: Alert messages with custom styles.
 
 `TntAlert` is just a wrapper around Nuxt UI's `UAlert` and accepts all of the same props.
 
-```js
+```vue
 <TntAlert
   title="Title"
   description="This is an alert."
@@ -19,7 +19,7 @@ As well as this, `TntAlert` defines some custom properties for quickly and easil
 
 ## Success
 
-```js
+```vue
 <TntAlert title="Work Saved" success />
 ```
 
@@ -27,7 +27,7 @@ As well as this, `TntAlert` defines some custom properties for quickly and easil
 
 ## Info
 
-```js
+```vue
 <TntAlert title="Coming Soon" info />
 ```
 
@@ -35,7 +35,7 @@ As well as this, `TntAlert` defines some custom properties for quickly and easil
 
 ## Warning
 
-```js
+```vue
 <TntAlert title="Oops!" warning />
 ```
 
@@ -43,7 +43,7 @@ As well as this, `TntAlert` defines some custom properties for quickly and easil
 
 ## Error
 
-```js
+```vue
 <TntAlert title="Action Denied" error />
 ```
 
@@ -51,7 +51,7 @@ As well as this, `TntAlert` defines some custom properties for quickly and easil
 
 ## Large
 
-```js
+```vue
 <TntAlert title="Bigger Text and Icon" info large />
 ```
 

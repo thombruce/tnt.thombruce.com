@@ -5,7 +5,7 @@ description: Provides a digital clock component.
 
 ## UTC
 
-```js
+```vue
 <TntClock />
 ```
 
@@ -13,7 +13,7 @@ description: Provides a digital clock component.
 
 ## With Timezone
 
-```js
+```vue
 <TntClock timezone="America/Los_Angeles" />
 ```
 

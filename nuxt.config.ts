@@ -57,7 +57,16 @@ export default defineNuxtConfig({
       markdown: {
         highlight: {
           langs: [
-            /* Add your own languages if you want to support code highlighting in documents */
+            'bash',
+            'html',
+            'md',
+            'mdc',
+            'css',
+            'json',
+            'yaml',
+            'js',
+            'ts',
+            'vue',
           ]
         },
       }

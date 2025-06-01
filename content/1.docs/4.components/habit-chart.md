@@ -6,7 +6,7 @@ category: WIP
 
 :tnt-alert{title="Work In Progress!" warning large}
 
-```js
+```vue
 <TntHabitChart />
 ```
 
