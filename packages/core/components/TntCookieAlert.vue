@@ -51,6 +51,13 @@ div(v-if="gaID && !consented && !rejected && open" class="fixed bottom-5 w-scree
         color: 'error', \
         onClick: rejectAll, \
       }, \
+      { \
+        label: 'Cookie Policy', \
+        icon: 'lucide:info', \
+        color: 'info', \
+        variant: 'outline', \
+        to: '/cookie-policy', \
+      }, \
     ]"
   )/
 </template>

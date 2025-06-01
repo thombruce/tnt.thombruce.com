@@ -64,5 +64,5 @@ div(:class="navbar({ variant })")
 
     div(class="flex")
       TntSearch/
-      TntDarkMode/
+      TntColorMode/
 </template>

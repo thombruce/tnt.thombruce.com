@@ -17,16 +17,11 @@ import _groupBy from 'lodash/groupBy'
 
 const locale = 'en-US',
       firstDayOfWeek = 'sun',
-      months = [undefined, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      months = [undefined, 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+      weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
-if (firstDayOfWeek === 'sun') weekdays.unshift('Sun')
-else weekdays.push('Sun')
-
-// TODO: Seriously think about i18n here. Those month values, those weekdays...
-//       solid contenders for early internationalization as such values are easy
-//       to find. But we must think about how that is going to work when we are
-//       converting from known (or integer) values to the internationalized form.
+if (firstDayOfWeek === 'sun') weekdays.unshift('sunday')
+else weekdays.push('sunday')
 
 const today = getToday(getLocalTimeZone())
 const startOfMonth = getStartOfMonth(today)
@@ -57,15 +52,17 @@ const weekGroups = _groupBy(dates, (d: CalendarDate) => getStartOfWeek(d, locale
 
 <template lang="pug">
 section(class="not-prose")
-  div(class="text-center text-xl font-bold") {{ months[today.month] }}
+  div(class="text-center text-xl font-bold") {{ $t(`dateTime.${months[today.month]}`) }}
 
   table(class="w-full table-fixed")
     thead
-      th(v-for="weekday in weekdays" class="text-dimmed") {{ weekday }}
+      //- TODO: Consider further abbreviation to first letter when rendered small if relevant
+      th(v-for="weekday in weekdays" class="text-dimmed") {{ $t(`dateTime.abbr.${weekday}`) }}
 
     tbody
       tr(v-for="weekGroup in weekGroups")
         td(v-for="date in weekGroup")
           div(class="aspect-square text-right")
+            //- TODO: add muted style if not current month
             span(:class="date.compare(today) == 0 ? 'text-primary font-bold' : ''") {{ date.day }}
 </template>

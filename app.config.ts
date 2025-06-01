@@ -31,6 +31,7 @@ export default defineAppConfig({
     },
   ],
   theme: undefined,
+  colorMode: null,
   backgroundPattern: 'circuit board',
   ui: {
     colors: {

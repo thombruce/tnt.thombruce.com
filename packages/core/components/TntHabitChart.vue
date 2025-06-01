@@ -27,9 +27,9 @@ while (iterDate.compare(today) < 0) {
 
 const locale = 'en-US', firstDayOfWeek = 'sun'
 
-const weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-if (firstDayOfWeek === 'sun') weekdays.unshift('Sun')
-else weekdays.push('Sun')
+const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+if (firstDayOfWeek === 'sun') weekdays.unshift('sunday')
+else weekdays.push('sunday')
 
 const weekdayGroups = _groupBy(dates, (d: CalendarDate) => getDayOfWeek(d, locale, firstDayOfWeek)) // TODO: Determine user locale; make 'sun' optional/configurable
 
@@ -62,7 +62,7 @@ table(class="not-prose w-full")
   tbody(class="leading-none")
     tr(v-for="weekday, i in weekdayGroups")
 
-      td(class="pr-3 text-sm") {{ [0, 3, 6].includes(Number(i)) ? weekdays[Number(i)] : null }}
+      td(class="text-sm") {{ [0, 3, 6].includes(Number(i)) ? $t(`dateTime.abbr.${weekdays[Number(i)]}`) : null }}
 
       td(v-for="date in weekday" class="")
         UTooltip(v-if="date" :text="String(date)")
