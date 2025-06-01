@@ -30,7 +30,7 @@ const close = () => { open.value = false }
 </script>
 
 <template lang="pug">
-div(v-if="gaID && !consented && !rejected && open" class="fixed bottom-5 w-screen px-2 md:px-12")
+div(v-if="gaID && !consented && !rejected && open" class="z-50 fixed bottom-5 w-screen px-2 md:px-12")
   UAlert(
     title="Heads up!"
     description='This site uses cookies to enhance your browsing experience and analyse traffic. By clicking "Accept", you consent to our use of cookies.'
