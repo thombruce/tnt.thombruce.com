@@ -16,7 +16,7 @@ const { class: klass = undefined, language = undefined, filename = undefined } =
 
 <template lang="pug">
 figure(class="relative")
-  pre(class="bg-neutral-800 dark:bg-neutral-950" :class="klass")
+  pre(class="bg-elevated" :class="klass")
     slot/
   figcaption(
     v-if="language || filename"

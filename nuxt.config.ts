@@ -52,6 +52,17 @@ export default defineNuxtConfig({
   modules: [
     /* Custom Modules */
   ],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            /* Add your own languages if you want to support code highlighting in documents */
+          ]
+        },
+      }
+    }
+  },
   i18n: {
     // strategy: 'no_prefix',
     locales: [

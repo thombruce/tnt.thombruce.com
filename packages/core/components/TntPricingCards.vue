@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// Plural
-
 const {
   cards
 } = defineProps<{
