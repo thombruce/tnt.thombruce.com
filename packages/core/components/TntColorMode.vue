@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const { colorMode: config } = useAppConfig()
-
 const colorMode = useColorMode()
-
-if (config === 'light') {
-  colorMode.value = 'light'
-  colorMode.forced = true
-} else if (config === 'dark') {
-  colorMode.value = 'dark'
-  colorMode.forced = true
-}
 
 const isDark = computed({
   get() {

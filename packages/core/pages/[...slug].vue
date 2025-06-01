@@ -24,6 +24,14 @@ const { data: navItems } = await useAsyncData(`tntNav-for-${collection}`, () => 
 
 const layout = (page.value?.layout || 'default') as LayoutKey
 
+// TODO: Strictly, a `layout` property is configurable in definePageMeta.
+//       I wonder if it's worth exploring that as a more consistent approach
+//       than whatever we are presently doing. It could be configured site-wide
+//       in pageMeta... and overideable per page using the value obtained above?
+definePageMeta({
+  colorMode: pageMeta.colorMode
+})
+
 tntOgImageComponent(page.value?.ogComponent, {
   title: page.value?.og?.title || page.value?.title,
   description: page.value?.og?.description || page.value?.description,
