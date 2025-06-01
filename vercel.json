@@ -1,4 +1,9 @@
 {
+  "framework": "nuxtjs",
+  "installCommand": "npm install",
+  "buildCommand": "npm run generate",
+  "devCommand": "npm run dev",
+  "outputDirectory": "dist",
   "images": {
     "sizes": [32, 64, 128, 256, 512, 1024, 2048, 4096]
   }
