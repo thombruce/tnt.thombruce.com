@@ -56,6 +56,9 @@ export default defineNuxtConfig({
           depth: 1,
         }
       }
+    },
+    preview: {
+      api: 'https://api.nuxt.studio'
     }
   },
   i18n: {
