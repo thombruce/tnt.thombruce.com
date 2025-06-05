@@ -1,5 +1,8 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
+// TODO: Simplify global schema for greater ease of using Nuxt Studio.
+//       Some values can be "advanced", accessible only via meta?
+
 // Reusable author
 export const author = z.object({
   name: z.string(),
@@ -23,16 +26,16 @@ export const og = z.object({
 
 // Global keys shared by all content pages
 export const global = {
-  layout: z.string().optional(),
-  ogComponent: z.string().optional(),
-  og: og.optional(),
   title: z.string(),
-  icon: z.string().optional(),
   description: z.string(),
+  og: og.optional(),
+  date: z.string().date(),
+  layout: z.string().optional(),
+  ogComponent: z.string().optional(), // TODO: Add back to og object if possible.
+  icon: z.string().optional(),
   headline: z.string(),
   image: z.string().optional(),
   images: z.array(z.string()).optional(),
-  date: z.string().date(),
   category: z.string().optional(),
   categories: z.array(z.string()).optional(),
   author: author.optional(),
