@@ -2,18 +2,18 @@ import { field, group } from '@nuxt/content/preview'
 
 export default defineNuxtSchema({
   appConfig: {
-    parent: group({
+    theme: group({
       title: 'Theme',
       description: 'Theme configuration',
-      icon: 'i-ph-palette-fill',
+      icon: 'ph:palette-fill',
       fields: {
-        backgroundPattern: field({
+        defaultLayout: field({
           type: 'string',
-          title: 'Background Pattern',
-          description: 'Background pattern used across your site.',
-          icon: 'i-ph-palette',
-          default: false, // TODO: false isn't a string; assess whether behaviour is correct and amend this/app.config
-          required: ['jigsaw', 'overcast', 'formal invitation', 'topography', 'texture', 'i like food', 'bubbles', 'floating cogs', 'glamorous', 'circuit board']
+          title: 'Default Layout',
+          description: 'The layout to be used for your pages if no other value is provided.',
+          icon: 'ph:layout',
+          default: 'default',
+          required: ['default', 'headerless', 'article', 'doc', 'empty']
         })
       }
     })
