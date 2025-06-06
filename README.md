@@ -96,3 +96,7 @@ Alternatively, and especially given that having two remotes maintained is a bit 
 Maybe we just update it such that GitHub is the canonical origin, and make it an administrative chore to ensure that GitLab does mirror the GitHub repo state (inclusive of tags).
 
 To achieve this we simply must update the origin remote such that it points to the GitHub repo and remember to run `git push gitlab && git push gitlab --tags` to update the mirror. Potentially we could do this from a GitHub action?
+
+## Credits
+
+- [Hero Patterns](https://heropatterns.com/) by Steve Schoger ([CC By 4.0](https://creativecommons.org/licenses/by/4.0/))

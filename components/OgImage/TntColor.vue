@@ -11,7 +11,7 @@
 -->
 
 <script setup lang="ts">
-import { computed, useSiteConfig } from '#imports'
+import { computed, useAppConfig, useSiteConfig } from '#imports'
 import { parseURL } from 'ufo'
 
 const props = withDefaults(defineProps<{
@@ -26,12 +26,12 @@ const props = withDefaults(defineProps<{
 
 // fallback to site name
 const website = computed(() => {
-  return props.website || useSiteConfig().og?.website || parseURL(useSiteConfig().url).host
+  return props.website || useAppConfig().og?.website || parseURL(useSiteConfig().url).host
 })
 
 // fallback to config color
 const color = computed(() => {
-  return props.color || useSiteConfig().og?.color || '#000000'
+  return props.color || useAppConfig().og?.color || '#000000'
 })
 </script>
 

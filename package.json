@@ -1,11 +1,10 @@
 {
-  "name": "@thombruce/tnt-template",
+  "name": "@thombruce/tnt",
   "version": "1.0.0-alpha.11",
   "private": true,
   "type": "module",
   "workspaces": [
-    ".",
-    "packages/*"
+    "."
   ],
   "scripts": {
     "build": "nuxt build",
@@ -14,12 +13,39 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.46",
+    "@internationalized/date": "^3.7.0",
+    "@nuxt/content": "^3.5.1",
+    "@nuxt/eslint": "^1.2.0",
+    "@nuxt/fonts": "^0.11.0",
+    "@nuxt/icon": "^1.11.0",
+    "@nuxt/image": "^1.10.0",
+    "@nuxt/scripts": "^0.11.5",
+    "@nuxt/test-utils": "^3.17.2",
+    "@nuxt/ui": "^3.0.1",
+    "@nuxtjs/i18n": "^9.5.3",
+    "@nuxtjs/seo": "^3.0.3",
+    "@tailwindcss/typography": "^0.5.16",
+    "@unhead/vue": "^2.0.2",
+    "@vueuse/core": "^13.0.0",
+    "@vueuse/nuxt": "^13.0.0",
+    "culori": "^4.0.1",
+    "eslint": "^9.23.0",
+    "lodash": "^4.17.21",
+    "nuxt-site-config": "^3.2.0",
+    "pug": "^3.0.3",
+    "tailwind-variants": "^1.0.0",
+    "typescript": "^5.8.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
   "devDependencies": {
     "@nuxt/devtools": "^2.4.0",
+    "@types/culori": "^4.0.0",
+    "@types/lodash": "^4.17.17",
+    "@vue/language-plugin-pug": "^2.2.8",
     "lerna": "^8.1.2",
     "nuxt": "^3.17.3"
-  },
-  "dependencies": {
-    "@thombruce/tnt": "^1.0.0-alpha.11"
   }
 }

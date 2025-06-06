@@ -1,4 +1,21 @@
-@import "@thombruce/tnt";
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@plugin "@tailwindcss/typography";
+
+/*
+  TODO: There seems to be a problem with defining custom font variables.
+        For instance, when I attempt to create a --font-default variable,
+        which we should be able to utilise as a class "font-default", I am
+        unable to see the change to this variable reflected in the theme.
+        It is as if the custom class were simply ignored.
+*/
+
+/*
+@theme static {
+  --font-sans: "Comic Sans MS", "Comic Sans", cursive;
+}
+*/
 
 :root {
   /* Border Radius */

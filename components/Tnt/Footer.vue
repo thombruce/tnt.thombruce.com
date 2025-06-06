@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-const copyright = tntTranslate('nuxtSiteConfig.copyright', useSiteConfig().copyright)
+const copyright = tntTranslate('nuxtSiteConfig.copyright', useAppConfig().site?.copyright)
 
 const { backgroundPattern } = useAppConfig()
 

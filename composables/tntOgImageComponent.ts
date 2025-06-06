@@ -27,7 +27,7 @@ export const tntOgImageComponent = (
     author?: { name: string, title?: string, avatar?: { src: string }, to?: string },
   }
 ) => {
-  return defineOgImageComponent(component || useSiteConfig().ogComponent || 'TntColor',
+  return defineOgImageComponent(component || useAppConfig().ogComponent || 'TntColor',
     {
       /* TntColor; BrandedLogo, Frame, Nuxt, NuxtSeo, Pergel, SimpleBlog, UnJs, Wave, WithEmoji */
       title: props?.title || null,

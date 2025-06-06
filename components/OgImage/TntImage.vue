@@ -7,7 +7,7 @@ const props = withDefaults(defineProps<{
 
 // fallback to site name
 const image = computed(() => {
-  return props.image || useSiteConfig().og?.image
+  return props.image || useAppConfig().og?.image
 })
 </script>
 

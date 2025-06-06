@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, useSiteConfig } from '#imports'
+import { computed, useAppConfig } from '#imports'
 
 const props = withDefaults(defineProps<{
   testimonial?: string
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 
 // fallback to config color
 const color = computed(() => {
-  return props.color || useSiteConfig().og?.color || '#000000'
+  return props.color || useAppConfig().og?.color || '#000000'
 })
 </script>
 
