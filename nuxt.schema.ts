@@ -3,8 +3,6 @@ import { field, group } from '@nuxt/content/preview'
 export default defineNuxtSchema({
   appConfig: {
     site: group({
-      title: 'Site',
-      description: 'Site configuration',
       icon: 'ph:info',
       fields: {
         name: field({
@@ -53,8 +51,7 @@ export default defineNuxtSchema({
       },
     }),
     ui: group({
-      title: 'UI',
-      description: 'Theme configuration',
+      // title: 'UI',
       icon: 'ph:palette-fill',
       fields: {
         layout: field({
@@ -63,6 +60,47 @@ export default defineNuxtSchema({
           description: 'Default page layout',
           default: 'default',
           required: ['default', 'headerless', 'article', 'doc', 'empty']
+        }),
+        theme: field({
+          type: 'string',
+          title: 'Theme',
+          description: 'Base theme',
+          default: 'solid',
+          required: ['solid', 'ghost']
+        }),
+        pattern: field({
+          type: 'string',
+          title: 'Background Pattern',
+          description: 'Hero Patterns by Steve Schoger',
+          default: false,
+          // required: ['i like food']
+        }),
+        colors: group({
+          title: 'Colors',
+          description: 'Theme colors',
+          fields: {
+            primary: field({
+              type: 'string',
+              title: 'Primary',
+              description: 'Primary color used for links, buttons and interactivity',
+              default: 'green',
+              required: ['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'],
+            }),
+            secondary: field({
+              type: 'string',
+              title: 'Secondary',
+              description: 'Secondary color (not currently used by TNT)',
+              default: 'blue',
+              required: ['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'],
+            }),
+            neutral: field({
+              type: 'string',
+              title: 'Neutral',
+              description: 'Neutral color used for the site text, background and layout',
+              default: 'slate',
+              required: ['slate', 'gray', 'zinc', 'neutral', 'stone'],
+            }),
+          }
         })
       }
     })

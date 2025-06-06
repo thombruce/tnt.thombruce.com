@@ -13,7 +13,7 @@ export default defineAppConfig({
   },
   ui: {
     layout: 'default',
-    theme: null, // NOTE: Changed from theme to ui.theme - update across app.
+    theme: 'solid',
     pattern: 'circuit board',
     colors: {
       primary: 'red',
