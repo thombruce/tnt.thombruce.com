@@ -58,7 +58,11 @@ export default defineNuxtConfig({
       }
     },
     preview: {
-      api: 'https://api.nuxt.studio'
+      api: 'https://api.nuxt.studio',
+      // dev: true,
+      // See here for how to debug studio setup in dev: https://content.nuxt.com/docs/studio/debug
+      // You probably don't want to do this all the time, as it exposes your app to the internet.
+      // It is useful specifically for development work concerning the admin interface on Nuxt Studio.
     }
   },
   i18n: {
