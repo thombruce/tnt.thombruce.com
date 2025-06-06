@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-const { name } = useSiteConfig()
+const { site: { name } } = useAppConfig()
 
 const { nav: navConfig } = useAppConfig()
 

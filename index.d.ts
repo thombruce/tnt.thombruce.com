@@ -1,6 +1,6 @@
 declare module 'nuxt/schema' {
   interface AppConfigInput {
-    site?: { copyright?: string }
+    site?: { name?: string, description?: string, url?: string, copyright?: string }
     nav?: object | boolean
     theme?: string | null
     backgroundPattern?: string | false
