@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 
 // fallback to config color
 const color = computed(() => {
-  return props.color || useAppConfig().og?.color || '#000000'
+  return props.color || useAppConfig().site?.og?.color || '#000000'
 })
 </script>
 

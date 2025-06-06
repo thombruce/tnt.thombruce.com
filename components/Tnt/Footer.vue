@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 const copyright = tntTranslate('nuxtSiteConfig.copyright', useAppConfig().site?.copyright)
 
-const { backgroundPattern } = useAppConfig()
+const { ui: { pattern: backgroundPattern } } = useAppConfig()
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'

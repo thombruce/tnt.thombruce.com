@@ -26,12 +26,12 @@ const props = withDefaults(defineProps<{
 
 // fallback to site name
 const website = computed(() => {
-  return props.website || useAppConfig().og?.website || parseURL(useAppConfig().site.url).host
+  return props.website || useAppConfig().site?.og?.website || parseURL(useAppConfig().site.url).host
 })
 
 // fallback to config color
 const color = computed(() => {
-  return props.color || useAppConfig().og?.color || '#000000'
+  return props.color || useAppConfig().site?.og?.color || '#000000'
 })
 </script>
 

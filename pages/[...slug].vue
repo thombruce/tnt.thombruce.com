@@ -6,7 +6,7 @@ const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
-const { theme, defaultLayout } = useAppConfig()
+const { ui: { theme, layout: defaultLayout } } = useAppConfig()
 
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections

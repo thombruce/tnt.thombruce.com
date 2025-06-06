@@ -1,9 +1,34 @@
 export default defineAppConfig({
   site: {
-    name: 'My Awesome Site',
-    description: 'Where I post all my awesome stuff!',
-    url: 'https://example.com/',
+    name: 'TNT',
+    description: 'A dynamite Nuxt template!',
+    url: 'https://tnt.thombruce.com/',
     copyright: 'Copyright © All rights reserved',
+    og: {
+      component: 'TntColor',
+      website: 'tnt.thombruce.com',
+      color: '#e7000b',
+      // image: null, // NOTE: Removed as broken. / TODO: Investigate
+    },
+  },
+  ui: {
+    layout: 'default',
+    theme: null, // NOTE: Changed from theme to ui.theme - update across app.
+    pattern: 'circuit board',
+    colors: {
+      primary: 'red',
+      secondary: 'blue',
+      success: 'green',
+      info: 'blue',
+      warning: 'yellow',
+      error: 'red',
+      neutral: 'slate',
+    }
+  },
+  og: {
+    website: null,
+    color: '#e7000b',
+    image: null,
   },
   nav: [
     { label: 'Home', icon: 'i-lucide:house', to: '/' },
@@ -36,24 +61,4 @@ export default defineAppConfig({
       ],
     },
   ],
-  theme: null,
-  backgroundPattern: 'circuit board',
-  defaultLayout: null,
-  ui: {
-    colors: {
-      primary: 'red',
-      secondary: 'blue',
-      success: 'green',
-      info: 'blue',
-      warning: 'yellow',
-      error: 'red',
-      neutral: 'slate',
-    }
-  },
-  og: {
-    website: null,
-    color: '#e7000b',
-    image: null,
-  },
-  ogComponent: 'TntColor', // TODO: Add to og object above if possible
 })

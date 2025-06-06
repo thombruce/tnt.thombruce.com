@@ -3,7 +3,7 @@ import * as locales from '@nuxt/ui/locale'
 
 const { locale } = useI18n()
 
-const { backgroundPattern } = useAppConfig()
+const { ui: { pattern: backgroundPattern } } = useAppConfig()
 </script>
 
 <template lang="pug">
