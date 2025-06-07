@@ -3,7 +3,7 @@ import { tv } from 'tailwind-variants'
 
 const copyright = tntTranslate('nuxtSiteConfig.copyright', useAppConfig().site?.copyright)
 
-const { ui: { pattern: backgroundPattern } } = useAppConfig()
+const { footer: { navigation: { content: navContent, links: navLinks } }, ui: { pattern: backgroundPattern } } = useAppConfig()
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
@@ -12,6 +12,12 @@ const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   //       ought to be a fixed/sticky element though, we must give consideration
   //       to the space occupied when positioning other content.
 }>()
+
+const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
+  // TODO: Amend such that tntNav accepts both values (or collected config object)
+  //       and allow for navLinks to be appended onto the generated list.
+  return tntNav(navContent ? navContent : navLinks)
+})
 
 const footer = computed(() => tv({
   base: 'w-full',
@@ -42,6 +48,12 @@ div(:class="footer({ variant })")
           justify-between"
   )
     div(class="py-2 grow text-center")
+      UNavigationMenu(
+        :items="navItems || undefined"
+        :unmount-on-hide="false"
+        orientation="vertical"
+        variant="link"
+      )/
       p(v-if="copyright" class="text-sm text-muted") {{ copyright }}
       p(v-if="backgroundPattern" class="text-sm text-muted")
         a(href="https://heropatterns.com/") Hero Patterns

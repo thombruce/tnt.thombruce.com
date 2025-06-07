@@ -102,6 +102,55 @@ export default defineNuxtSchema({
           }
         })
       }
-    })
+    }),
+    header: group({
+      icon: 'mdi:page-layout-header',
+      fields: {
+        navigation: group({
+          title: 'Navigation',
+          description: 'Links to be shown in the site header',
+          fields: {
+            content: field({
+              type: 'boolean',
+              title: 'Content navigation',
+              description: 'If true, TNT will automatically generate navigation links based on your site contents',
+              default: true,
+            }),
+            // TODO: With these values being what they are...
+            //       These links could in fact be appended onto the generated list!
+            //       We could have generated links AND additional links like to... Facebook, GitHub, whatever...
+            links: field({
+              type: 'array',
+              title: 'Links',
+              description: 'Links to be shown in the header',
+              default: [],
+            }),
+          },
+        }),
+      },
+    }),
+    footer: group({
+      icon: 'mdi:page-layout-footer',
+      fields: {
+        navigation: group({
+          title: 'Navigation',
+          description: 'Links to be shown in the site footer',
+          fields: {
+            content: field({
+              type: 'boolean',
+              title: 'Content navigation',
+              description: 'If true, TNT will automatically generate navigation links based on your site contents',
+              default: true,
+            }),
+            links: field({
+              type: 'array',
+              title: 'Links',
+              description: 'Links to be shown in the footer',
+              default: [],
+            }),
+          },
+        }),
+      },
+    }),
   }
 })

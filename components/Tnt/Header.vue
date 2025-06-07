@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-const { site: { name } } = useAppConfig()
-
-const { nav: navConfig } = useAppConfig()
+const { header: { navigation: { content: navContent, links: navLinks } }, site: { name } } = useAppConfig()
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
@@ -14,7 +12,9 @@ const { /* color = 'neutral', */ variant = undefined } = defineProps<{
 }>()
 
 const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
-  return tntNav(navConfig)
+  // TODO: Amend such that tntNav accepts both values (or collected config object)
+  //       and allow for navLinks to be appended onto the generated list.
+  return tntNav(navContent ? navContent : navLinks)
 })
 
 const navbar = computed(() => tv({
