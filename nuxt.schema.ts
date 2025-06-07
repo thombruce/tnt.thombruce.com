@@ -51,8 +51,7 @@ export default defineNuxtSchema({
       },
     }),
     ui: group({
-      // title: 'UI',
-      icon: 'ph:palette-fill',
+      icon: 'ph:palette',
       fields: {
         layout: field({
           type: 'string',
@@ -73,7 +72,7 @@ export default defineNuxtSchema({
           title: 'Background Pattern',
           description: 'Hero Patterns by Steve Schoger',
           default: false,
-          // required: ['i like food']
+          required: ['jigsaw', 'overcast', 'formal invitation', 'topography', 'texture', 'i like food', 'bubbles', 'floating cogs', 'glamorous', 'circuit board']
         }),
         colors: group({
           title: 'Colors',
