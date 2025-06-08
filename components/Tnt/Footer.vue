@@ -13,7 +13,7 @@ const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   //       to the space occupied when positioning other content.
 }>()
 
-const { data: navItems } = await useAsyncData(`tntNav-for-content`, () => {
+const { data: navItems } = await useAsyncData(`tntNav-for-footer`, () => {
   // TODO: Amend such that tntNav accepts both values (or collected config object)
   //       and allow for navLinks to be appended onto the generated list.
   return tntNav(navContent ? navContent : navLinks)

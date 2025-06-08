@@ -12,6 +12,7 @@ export const author = z.object({
 })
 
 export const og = z.object({
+  component: z.string().optional(),
   title: z.string().optional(),
   description: z.string().optional(),
   icon: z.string().optional(),
@@ -30,18 +31,17 @@ export const global = {
   description: z.string(),
   og: og.optional(),
   date: z.string().date(),
-  layout: z.string().optional(),
-  ogComponent: z.string().optional(), // TODO: Add back to og object if possible.
-  icon: z.string().optional(),
-  headline: z.string(),
-  image: z.string().optional(),
+  layout: z.string().optional(), // .meta candidate
+  icon: z.string().optional(), // .meta candidate
+  headline: z.string(), // .meta candidate
+  image: z.string().optional(), // scrap?
   images: z.array(z.string()).optional(),
-  category: z.string().optional(),
+  category: z.string().optional(), // scrap?
   categories: z.array(z.string()).optional(),
-  author: author.optional(),
+  author: author.optional(), // scrap?
   authors: z.array(author).optional(),
   tags: z.array(z.string()).optional(),
-  list: z.boolean()
+  list: z.boolean() // .meta candidate
     .or(z.string())
     .or(z.object({
       collection: z.string().optional(),

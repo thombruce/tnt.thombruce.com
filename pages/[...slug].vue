@@ -28,7 +28,7 @@ definePageMeta({
   colorMode: pageMeta.colorMode
 })
 
-tntOgImageComponent(page.value?.ogComponent, {
+tntOgImageComponent(page.value?.og?.component, {
   title: page.value?.og?.title || page.value?.title,
   description: page.value?.og?.description || page.value?.description,
   icon: page.value?.og?.icon || page.value?.icon,
