@@ -7,7 +7,7 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 export const author = z.object({
   name: z.string(),
   title: z.string().optional(),
-  avatar: z.object({ src: z.string() }).optional(),
+  avatar: z.object({ src: z.string().editor({ input: 'media' }) }).optional(),
   to: z.string().url().optional(),
 })
 
@@ -27,20 +27,29 @@ export const og = z.object({
 
 // Global keys shared by all content pages
 export const global = {
-  title: z.string(),
-  description: z.string(),
+  title: z.string().optional(),
+  description: z.string().optional(),
   og: og.optional(),
-  date: z.string().date(),
-  layout: z.string().optional(), // .meta candidate
-  icon: z.string().optional(), // .meta candidate
-  headline: z.string(), // .meta candidate
-  image: z.string().optional(), // scrap?
-  images: z.array(z.string()).optional(),
-  category: z.string().optional(), // scrap?
-  categories: z.array(z.string()).optional(),
-  author: author.optional(), // scrap?
+
+  date: z.string().date().optional(),
+
+  layout: z.enum(['default', 'article', 'doc']).optional(),
+
+  icon: z.string().optional().editor({ input: 'icon' }),
+
+  images: z.array(
+    z.string().editor({ input: 'media' })
+  ),
+
+  categories: z.array(
+    z.string()
+  ),
+
   authors: z.array(author).optional(),
-  tags: z.array(z.string()).optional(),
+
+  // tags: z.array(z.string()).optional(), // TODO: Not presently used anywhere
+
+  // TODO: Simplify? The type is currently too complex for use in Studio
   list: z.boolean() // .meta candidate
     .or(z.string())
     .or(z.object({

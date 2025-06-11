@@ -28,7 +28,7 @@ div(class="my-4 space-y-4")
             //- TODO: Wouldn't it be cool to be able to define custom metadata?
             //- Perhaps we can achieve this with scoped slots passing the retrieved
             //- page data back to the component invocation.
-            UBadge(v-if="'category' in item && item.category" color="neutral" variant="outline") {{ item.category }}
+            UBadge(v-if="'categories' in item && item.categories" v-for="category in item.categories" color="neutral" variant="outline") {{ category }}
             strong(v-if="'date' in item && item.date") {{ new Date(item.date).toLocaleDateString() }}
           div(class="space-y-2")
             h2(class="text-2xl font-extrabold") {{ item.title }}

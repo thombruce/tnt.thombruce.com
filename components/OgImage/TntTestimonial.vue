@@ -3,11 +3,11 @@ import { computed, useAppConfig } from '#imports'
 
 const props = withDefaults(defineProps<{
   testimonial?: string
-  author?: { name: string, title: string, avatar: string }
+  authors?: { name: string, title: string, avatar: string }[]
   color?: string
 }>(), {
   testimonial: '',
-  author: undefined,
+  authors: undefined,
   color: undefined,
 })
 
@@ -29,7 +29,7 @@ const color = computed(() => {
         <h1 v-if="testimonial" class="text-[80px] p-20 font-black text-left" style="display: block; line-clamp: 3; text-overflow: ellipsis;">
           {{ testimonial }}
         </h1>
-        <p v-if="author?.name" class="text-2xl pb-10 px-20 mb-0" style="display: block; line-clamp: 2; text-overflow: ellipsis;">
+        <p v-for="author in authors" :key="author.name" class="text-2xl pb-10 px-20 mb-0" style="display: block; line-clamp: 2; text-overflow: ellipsis;">
           <span class="font-bold">{{ author.name }}</span>
           <span v-if="author.title" class="ml-3">{{ author.title }}</span>
         </p>

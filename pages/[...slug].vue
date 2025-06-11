@@ -34,15 +34,17 @@ tntOgImageComponent(page.value?.og?.component, {
   icon: page.value?.og?.icon || page.value?.icon,
   logo: page.value?.og?.logo,
   // siteLogo: page.value?.og?.siteLogo,
-  headline: page.value?.og?.headline || page.value?.headline,
+  // headline: page.value?.og?.headline || page.value?.headline, // TODO: headline removed - but we don't use this in our own OG Image components anyhow
   website: page.value?.og?.website,
   color: page.value?.og?.color,
   image: page.value?.og?.image || page.value?.image,
   // theme: page.value?.og?.theme,
   bg: page.value?.og?.bg,
   emoji: page.value?.og?.emoji,
-  testimonial: page.value?.og?.headline || page.value?.headline,
-  author: page.value?.author,
+  // TODO: headline replaced with description below, as we're simplifying the schema...
+  //       Revisit with a more robust approach in future.
+  testimonial: page.value?.og?.description || page.value?.description,
+  authors: page.value?.authors,
 })
 </script>
 
@@ -55,8 +57,11 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
       :unmount-on-hide="false"
     )/
 
-  template(#header)
-    TntBlogHeader(v-if="page" :page="page")/
+  //- template(#header)
+  //-   TODO: We're presently duplicating title and "description" if present in body.
+  //-         Need to figure out what we want as a default behaviour here.
+  //-         I'm simply going to hide the BlogHeader for now, but let's revisit soon.
+  //-   TntBlogHeader(v-if="page" :page="page")/
 
   ContentRenderer(
     v-if="page"

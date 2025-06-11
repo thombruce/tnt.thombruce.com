@@ -24,7 +24,7 @@ export const tntOgImageComponent = (
     bg?: string,
     emoji?: string,
     testimonial?: string,
-    author?: { name: string, title?: string, avatar?: { src: string }, to?: string },
+    authors?: { name: string, title?: string, avatar?: { src: string }, to?: string }[],
   }
 ) => {
   return defineOgImageComponent(component || useAppConfig().site?.og?.component || 'TntColor',
@@ -72,7 +72,7 @@ export const tntOgImageComponent = (
 
       /* TntTestimonial */
       testimonial: props?.testimonial || props?.headline || null, // NOTE: We reuse headline to avoid having to define a custom .testimonial value used only for this OgImage component
-      author: props?.author || null,
+      authors: props?.authors || [],
     }
   )
 }
