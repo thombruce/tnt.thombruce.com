@@ -68,7 +68,7 @@ export default defineAppConfig({
   },
   footer: {
     navigation: {
-      content: false,
+      content: true,
       links: [],
     }
   },
