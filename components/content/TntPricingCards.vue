@@ -2,7 +2,17 @@
 const {
   cards
 } = defineProps<{
-  cards: object[]
+  cards: {
+    highlight?: boolean
+    title?: string
+    badge?: string
+    description?: string
+    price?: string
+    discount?: string
+    features?: string[]
+    button?: object
+    terms?: string
+  }[]
 }>()
 </script>
 
