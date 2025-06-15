@@ -53,7 +53,7 @@ export default defineNuxtSchema({
           title: 'Layout',
           description: 'Default page layout',
           default: 'default',
-          required: ['default', 'headerless', 'article', 'doc', 'empty']
+          required: ['default']
         }),
         theme: field({
           type: 'string',
@@ -114,12 +114,15 @@ export default defineNuxtSchema({
             // TODO: With these values being what they are...
             //       These links could in fact be appended onto the generated list!
             //       We could have generated links AND additional links like to... Facebook, GitHub, whatever...
-            links: field({
-              type: 'array',
-              title: 'Links',
-              description: 'Links to be shown in the header',
-              default: [],
-            }),
+            // TODO: links fields disabled due to errors in Nuxt Studio
+            //       An array of link objects is not supported. Favour either strings
+            //       or key-value pairs instead.
+            // links: field({
+            //   type: 'array',
+            //   title: 'Links',
+            //   description: 'Links to be shown in the header',
+            //   default: [],
+            // }),
           },
         }),
       },
@@ -168,12 +171,15 @@ export default defineNuxtSchema({
               description: 'If true, TNT will automatically generate navigation links based on your site contents',
               default: true,
             }),
-            links: field({
-              type: 'array',
-              title: 'Links',
-              description: 'Links to be shown in the footer',
-              default: [],
-            }),
+            // TODO: links fields disabled due to errors in Nuxt Studio
+            //       An array of link objects is not supported. Favour either strings
+            //       or key-value pairs instead.
+            // links: field({
+            //   type: 'array',
+            //   title: 'Links',
+            //   description: 'Links to be shown in the footer',
+            //   default: [],
+            // }),
           },
         }),
       },

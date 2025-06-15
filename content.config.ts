@@ -33,7 +33,7 @@ export const global = {
 
   date: z.string().date().optional(),
 
-  layout: z.enum(['default', 'article', 'doc']).optional(),
+  layout: z.enum(['default']).optional(),
 
   icon: z.string().optional().editor({ input: 'icon' }),
 
