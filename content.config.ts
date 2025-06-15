@@ -15,14 +15,14 @@ export const og = z.object({
   component: z.string().optional(),
   title: z.string().optional(),
   description: z.string().optional(),
-  icon: z.string().optional(),
-  logo: z.string().optional(),
-  headline: z.string().optional(),
+  // icon: z.string().optional(),
+  // logo: z.string().optional(),
+  // headline: z.string().optional(),
   color: z.string().optional(),
   website: z.string().optional(),
-  image: z.string().optional(),
-  bg: z.string().optional(),
-  emoji: z.string().optional(),
+  // image: z.string().optional(),
+  // bg: z.string().optional(),
+  // emoji: z.string().optional(),
 })
 
 // Global keys shared by all content pages

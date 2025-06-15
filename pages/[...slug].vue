@@ -6,7 +6,7 @@ const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
-const { ui: { theme, layout: defaultLayout } } = useAppConfig()
+const { ui: { theme, layout: defaultLayout, pattern: backgroundPattern } } = useAppConfig()
 
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections
@@ -30,17 +30,17 @@ definePageMeta({
 
 tntOgImageComponent(page.value?.og?.component, {
   title: page.value?.og?.title || page.value?.title,
-  description: page.value?.og?.description || page.value?.description,
-  icon: page.value?.og?.icon || page.value?.icon,
-  logo: page.value?.og?.logo,
+  // description: page.value?.og?.description || page.value?.description,
+  // icon: page.value?.og?.icon || page.value?.icon,
+  // logo: page.value?.og?.logo,
   // siteLogo: page.value?.og?.siteLogo,
   // headline: page.value?.og?.headline || page.value?.headline, // TODO: headline removed - but we don't use this in our own OG Image components anyhow
   website: page.value?.og?.website,
   color: page.value?.og?.color,
-  image: page.value?.og?.image || page.value?.image,
+  // image: page.value?.og?.image || page.value?.image,
   // theme: page.value?.og?.theme,
-  bg: page.value?.og?.bg,
-  emoji: page.value?.og?.emoji,
+  // bg: page.value?.og?.bg,
+  // emoji: page.value?.og?.emoji,
   // TODO: headline replaced with description below, as we're simplifying the schema...
   //       Revisit with a more robust approach in future.
   testimonial: page.value?.og?.description || page.value?.description,
@@ -88,4 +88,6 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
 
   template(#toc v-if="page?.toc && page?.body.toc?.links.length")
     TntToc(:toc="page?.body.toc")
+
+  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 </template>
