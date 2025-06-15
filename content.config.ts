@@ -96,6 +96,7 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         ...global,
+        toc: z.boolean().default(true),
         category: z.string().optional(),
       })
     }),
@@ -114,6 +115,8 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         ...global,
+        nav: z.boolean().default(true),
+        toc: z.boolean().default(true),
         category: z.string().optional(),
       })
     }),

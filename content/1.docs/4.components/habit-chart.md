@@ -4,6 +4,8 @@ description: A contributions graph.
 category: WIP
 ---
 
+# Habit Chart
+
 :tnt-alert{title="Work In Progress!" warning large}
 
 ```vue

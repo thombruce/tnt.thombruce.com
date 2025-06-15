@@ -3,6 +3,8 @@ title: Alert
 description: Alert messages with custom styles.
 ---
 
+# Alert
+
 `TntAlert` is just a wrapper around Nuxt UI's `UAlert` and accepts all of the same props.
 
 ```vue
