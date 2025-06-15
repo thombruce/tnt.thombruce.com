@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-const copyright = tntTranslate('nuxtSiteConfig.copyright', useAppConfig().site?.copyright)
+const {
+  ui: { pattern: backgroundPattern },
+  footer: {
+    about: footerAbout,
+    copyright: footerCopyright,
+    contact: { email, tel, address },
+    navigation: { content: navContent, links: navLinks },
+  },
+} = useAppConfig()
 
-const { footer: { navigation: { content: navContent, links: navLinks } }, ui: { pattern: backgroundPattern } } = useAppConfig()
+const about = tntTranslate('footer.about', footerAbout)
+const copyright = tntTranslate('footer.copyright', footerCopyright)
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
@@ -47,18 +56,43 @@ div(:class="footer({ variant })")
           items-center \
           justify-between"
   )
-    div(class="py-2 grow text-center")
-      UNavigationMenu(
-        :items="navItems || undefined"
-        :unmount-on-hide="false"
-        orientation="vertical"
-        variant="link"
-      )/
-      p(v-if="copyright" class="text-sm text-muted") {{ copyright }}
-      p(v-if="backgroundPattern" class="text-sm text-muted")
-        a(href="https://heropatterns.com/") Hero Patterns
-        |
-        | by Steve Schoger (
-        a(href="https://creativecommons.org/licenses/by/4.0/") CC By 4.0
-        | )
+    div(class="py-2 grow")
+      div(v-if="about || navItems || tel || email || address" class="flex flex-wrap")
+
+        div(v-if="about" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
+          span(class="text-xl font-semibold") About
+          p {{ about }}
+
+        div(v-if="navItems" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
+          span(class="text-xl font-semibold") Links
+          UNavigationMenu(
+            :items="navItems"
+            :unmount-on-hide="false"
+            orientation="vertical"
+            variant="link"
+            class="flex-1"
+          )/
+
+        div(v-if="tel || email || address" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
+          span(class="text-xl font-semibold") Contact
+          dl(v-if="tel")
+            dt Tel
+            dd {{ tel }}
+          dl(v-if="email")
+            dt Email
+            dd {{ email }}
+          dl(v-if="address")
+            dt Address
+            dd {{ address }}
+
+      div(class="text-center")
+
+        p(v-if="copyright" class="text-sm text-muted") {{ copyright }}
+
+        p(v-if="backgroundPattern" class="text-sm text-muted")
+          a(href="https://heropatterns.com/") Hero Patterns
+          |
+          | by Steve Schoger (
+          a(href="https://creativecommons.org/licenses/by/4.0/") CC By 4.0
+          | )
 </template>

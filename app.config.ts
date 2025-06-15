@@ -3,7 +3,6 @@ export default defineAppConfig({
     name: 'TNT',
     description: 'A dynamite Nuxt template!',
     url: 'https://tnt.thombruce.com/',
-    copyright: 'Copyright © All rights reserved',
     og: {
       component: 'TntColor',
       website: 'tnt.thombruce.com',
@@ -67,6 +66,13 @@ export default defineAppConfig({
     }
   },
   footer: {
+    about: undefined,
+    contact: {
+      email: undefined,
+      tel: undefined,
+      address: undefined,
+    },
+    copyright: 'Copyright © All rights reserved',
     navigation: {
       content: true,
       links: [],

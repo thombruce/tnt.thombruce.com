@@ -1,6 +1,11 @@
 {
   "nuxtSiteConfig": {
-    
+    "_name": "Replace with 'name' and provide translation to activate translations",
+    "_description": "Replace with 'description' and provide translation to activate translations"
+  },
+  "footer": {
+    "_about": "",
+    "_copyright": ""
   },
   "content": {
     "collections": {

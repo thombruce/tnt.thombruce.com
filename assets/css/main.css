@@ -3,6 +3,8 @@
 
 @plugin "@tailwindcss/typography";
 
+@source "../../content/**/*";
+
 /*
   TODO: There seems to be a problem with defining custom font variables.
         For instance, when I attempt to create a --font-default variable,
