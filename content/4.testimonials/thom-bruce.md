@@ -2,7 +2,6 @@
 title: My Do-Everything Template
 navigation:
   title: Thom Bruce
-layout: article
 author:
   name: Thom Bruce
   title: TNT Lead Developer

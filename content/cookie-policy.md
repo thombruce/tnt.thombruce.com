@@ -2,7 +2,6 @@
 title: Cookie Policy
 description:
 icon: lucide:cookie
-layout: article
 navigation:
   title: Cookies
 # Company Details

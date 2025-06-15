@@ -93,7 +93,6 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         ...global,
-        layout: z.string().default('article'),
         category: z.string().optional(),
       })
     }),
@@ -112,7 +111,6 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         ...global,
-        layout: z.string().default('doc'),
         category: z.string().optional(),
       })
     }),
