@@ -7,11 +7,10 @@ const { collection = 'pages' } = defineProps<{
   collection?: keyof PageCollections
 }>()
 
-const { data } = await useAsyncData(`surround-for-${path}`, () => {
-  return queryCollectionItemSurroundings(collection, path)
-})
+// NOTE: useAsyncData removed
+const data = await queryCollectionItemSurroundings(collection, path)
 
-const [prev, next] = data.value ? [data.value[0], data.value[1]] : []
+const [prev, next] = data ? [data[0], data[1]] : []
 </script>
 
 <template lang="pug">

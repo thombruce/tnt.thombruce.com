@@ -8,14 +8,13 @@ const { collection, path, order = { field: 'stem', direction: 'ASC' } } = define
   order?: { field: any, direction: 'ASC' | 'DESC' }
 }>()
 
-const { data: items } = await useAsyncData(`tntList-for-${collection}-${path}`, () => {
-  return queryCollection(collection as keyof PageCollections)
-    .where('extension', '=', 'md')
-    .where('path', 'LIKE', `${path}/%`)
-    // .select('title', 'path', 'description', 'stem', 'date')
-    .order(order.field, order.direction)
-    .all()
-})
+// NOTE: useAsyncData removed
+const items = await queryCollection(collection as keyof PageCollections)
+  .where('extension', '=', 'md')
+  .where('path', 'LIKE', `${path}/%`)
+  // .select('title', 'path', 'description', 'stem', 'date')
+  .order(order.field, order.direction)
+  .all()
 </script>
 
 <template lang="pug">

@@ -12,39 +12,35 @@ const collection = collections.includes(route.params.slug[0] as keyof PageCollec
   ? route.params.slug[0] as keyof PageCollections
   : 'pages'
 
-const { data: page } = await useAsyncData(route.path, () => {
-  return queryCollection(collection).path(route.path).first()
-})
+// NOTE: useAsyncData removed
+const page = await queryCollection(collection).path(route.path).first()
 
-const { data: navItems } = await useAsyncData(`tntNav-for-${collection}`, () => {
-  return tntNav(true, collection)
-  // TODO: Look and see if we can tweak tntNav to allow adjustable start and
-  //       end depths.
-})
+// NOTE: useAsyncData removed
+const navItems = await tntNav(true, collection)
 
-const layout = (page.value?.layout || defaultLayout || 'default') as LayoutKey
+const layout = (page?.layout || defaultLayout || 'default') as LayoutKey
 
 definePageMeta({
   colorMode: pageMeta.colorMode
 })
 
-tntOgImageComponent(page.value?.og?.component, {
-  title: page.value?.og?.title || page.value?.title,
-  // description: page.value?.og?.description || page.value?.description,
-  // icon: page.value?.og?.icon || page.value?.icon,
-  // logo: page.value?.og?.logo,
-  // siteLogo: page.value?.og?.siteLogo,
-  // headline: page.value?.og?.headline || page.value?.headline, // TODO: headline removed - but we don't use this in our own OG Image components anyhow
-  website: page.value?.og?.website,
-  color: page.value?.og?.color,
-  // image: page.value?.og?.image || page.value?.image,
-  // theme: page.value?.og?.theme,
-  // bg: page.value?.og?.bg,
-  // emoji: page.value?.og?.emoji,
+tntOgImageComponent(page?.og?.component, {
+  title: page?.og?.title || page?.title,
+  // description: page?.og?.description || page?.description,
+  // icon: page?.og?.icon || page?.icon,
+  // logo: page?.og?.logo,
+  // siteLogo: page?.og?.siteLogo,
+  // headline: page?.og?.headline || page?.headline, // TODO: headline removed - but we don't use this in our own OG Image components anyhow
+  website: page?.og?.website,
+  color: page?.og?.color,
+  // image: page?.og?.image || page?.image,
+  // theme: page?.og?.theme,
+  // bg: page?.og?.bg,
+  // emoji: page?.og?.emoji,
   // TODO: headline replaced with description below, as we're simplifying the schema...
   //       Revisit with a more robust approach in future.
-  testimonial: page.value?.og?.description || page.value?.description,
-  authors: page.value?.authors,
+  testimonial: page?.og?.description || page?.description,
+  authors: page?.authors,
 })
 </script>
 

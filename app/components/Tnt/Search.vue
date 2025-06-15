@@ -23,8 +23,9 @@ const query = ref('')
 const sections: { collection: keyof PageCollections, section: object[] | undefined }[] = []
 
 for (const collection of useRuntimeConfig().public.collections as (keyof PageCollections)[]) {
-  const section = await useAsyncData(`search-for-${collection}`, () => queryCollectionSearchSections(collection))
-    .then(async => async.data.value?.map(c => {
+  // NOTE: useAsyncData removed
+  const section = await queryCollectionSearchSections(collection)
+    .then(async => async.map(c => {
       return {
         label: c.title,
         suffix: c.content,

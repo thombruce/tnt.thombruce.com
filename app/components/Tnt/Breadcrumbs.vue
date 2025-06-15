@@ -7,9 +7,8 @@ const { collection = 'pages' } = defineProps<{
   collection?: keyof PageCollections
 }>()
 
-const { data: items } = await useAsyncData(`tntBreadcrumbs-for-${path}`, () => {
-  return tntCrumbs(path, collection)
-})
+// NOTE: useAsyncData removed
+const items = await tntCrumbs(path, collection)
 </script>
 
 <template lang="pug">
