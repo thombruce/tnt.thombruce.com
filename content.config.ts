@@ -35,6 +35,9 @@ export const global = {
 
   layout: z.enum(['default']).optional(),
 
+  nav: z.boolean().default(false),
+  toc: z.boolean().default(false),
+
   icon: z.string().optional().editor({ input: 'icon' }),
 
   images: z.array(

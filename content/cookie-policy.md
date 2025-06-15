@@ -12,6 +12,8 @@ address: # Optional
 telephone: # Optional
 ---
 
+# Cookie Policy
+
 **{{ $doc.meta.companyName }}** (“we”, “us”, or “our”) respects your privacy and is committed to protecting it through our compliance with this Cookie Policy. This policy explains how we use cookies and similar tracking technologies on our website, **{{ $doc.meta.website }}** ("Website"), and your rights and choices under applicable privacy laws, including the **General Data Protection Regulation (GDPR)**.
 
 ---

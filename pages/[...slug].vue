@@ -50,9 +50,9 @@ tntOgImageComponent(page.value?.og?.component, {
 
 <template lang="pug">
 NuxtLayout(:name="layout" :theme="theme" :collection="collection")
-  template(#nav)
+  template(#nav v-if="page?.nav && navItems")
     UNavigationMenu(
-      :items="navItems || undefined"
+      :items="navItems"
       orientation="vertical"
       :unmount-on-hide="false"
     )/
@@ -86,6 +86,6 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
     :order="typeof page.list === 'object' && page.list.order ? page.list.order : undefined"
   )
 
-  template(#toc v-if="page?.body.toc?.links.length")
+  template(#toc v-if="page?.toc && page?.body.toc?.links.length")
     TntToc(:toc="page?.body.toc")
 </template>
