@@ -46,6 +46,6 @@
     "@types/lodash": "^4.17.17",
     "@vue/language-plugin-pug": "^2.2.8",
     "lerna": "^8.1.2",
-    "nuxt": "^3.17.3"
+    "nuxt": "^3.17.5"
   }
 }
