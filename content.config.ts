@@ -40,8 +40,12 @@ export const global = {
 
   layout: z.enum(['default']).optional(),
 
+  // TODO: Some kinda page.ui object.
+  //       Probably include layout (above) in this as well.
   nav: z.boolean().default(false),
+  breadcrumbs: z.boolean().default(true),
   toc: z.boolean().default(false),
+  prevnext: z.boolean().default(true),
 
   icon: z.string().optional().editor({ input: 'icon' }),
 

@@ -16,16 +16,12 @@ div(class="flex flex-col h-screen justify-between")
         slot(name="nav")
 
       div(:class="($slots.nav && $slots.toc) ? 'col-span-10 md:col-span-6' : ($slots.nav || $slots.toc) ? 'col-span-10 md:col-span-8' : 'col-span-10'")
-        TntBreadcrumbs(:collection="collection")/
-
         //- NOTE: header slot removed in order to favour in-document title
         //- slot(name="header")
 
         //- TODO: On sm and lower, we also want Toc here!
 
         slot
-
-        TntPrevNext(:collection="collection")/
 
       div(v-if="$slots.toc" class="col-span-2 hidden md:flex")
         slot(name="toc")

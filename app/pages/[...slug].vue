@@ -53,6 +53,8 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
       :unmount-on-hide="false"
     )/
 
+  TntBreadcrumbs(v-if="page?.breadcrumbs" :collection="collection")/
+
   UCarousel(v-if="page?.images" v-slot="{ item }" :items="page.images" :ui="{ item: 'basis-1/3' }")
     figure(v-if="item && item.caption")
       div(class="block aspect-video")
@@ -83,6 +85,8 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
     "
     :order="typeof page.list === 'object' && page.list.order ? page.list.order : undefined"
   )
+
+  TntPrevNext(v-if="page?.prevnext" :collection="collection")/
 
   TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 
