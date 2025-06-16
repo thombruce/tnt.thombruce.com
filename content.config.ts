@@ -3,7 +3,12 @@ import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 // TODO: Simplify global schema for greater ease of using Nuxt Studio.
 //       Some values can be "advanced", accessible only via meta?
 
-// Reusable author
+export const image = z.object({
+  src: z.string().editor({ input: 'media' }),
+  alt: z.string().optional(),
+  caption: z.string().optional(),
+})
+
 export const author = z.object({
   name: z.string(),
   title: z.string().optional(),
@@ -40,17 +45,7 @@ export const global = {
 
   icon: z.string().optional().editor({ input: 'icon' }),
 
-  // TODO: Array type not supported in Nuxt Studio.
-  //       It's just a string array type... so gotta be the editor value that's screwing us.
-  //       However authors array does work! Consider use of object array rather than simple
-  //       string values. Other values that could be added to the object along with src include
-  //       alt, caption... Point is making the .string().editor() value a property of an object
-  //       should render it presentable in the Nuxt Studio UI.
-  // ALTR: You could just make it a singular image by default. 🤔 This singular image could be
-  //       assumed to be the header image, the OG image, the preview image, etc...
-  images: z.array(
-    z.string().editor({ input: 'media' })
-  ),
+  images: z.array(image).optional(),
 
   categories: z.array(
     z.string()

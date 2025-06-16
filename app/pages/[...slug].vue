@@ -53,11 +53,13 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
       :unmount-on-hide="false"
     )/
 
-  //- template(#header)
-  //-   TODO: We're presently duplicating title and "description" if present in body.
-  //-         Need to figure out what we want as a default behaviour here.
-  //-         I'm simply going to hide the BlogHeader for now, but let's revisit soon.
-  //-   TntBlogHeader(v-if="page" :page="page")/
+  UCarousel(v-if="page?.images" v-slot="{ item }" :items="page.images" :ui="{ item: 'basis-1/3' }")
+    figure(v-if="item && item.caption")
+      div(class="block aspect-video")
+        NuxtImg(:src="String(item.src)" :alt="item.alt" fit="cover" width="1200" class="w-full h-full object-cover rounded-lg")
+      figcaption {{ item.caption }}
+    div(v-else-if="item" class="block aspect-video")
+      NuxtImg(:src="String(item.src)" :alt="item.alt" fit="cover" width="1200" class="w-full h-full object-cover rounded-lg")
 
   ContentRenderer(
     v-if="page"

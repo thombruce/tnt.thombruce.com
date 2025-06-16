@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
-const { header: { navigation: { content: navContent, links: navLinks } }, site: { name } } = useAppConfig()
+const {
+  site: { name },
+  header: {
+    navigation: { content: navContent, links: navLinks },
+  },
+} = useAppConfig() as any
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
