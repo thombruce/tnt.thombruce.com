@@ -40,6 +40,14 @@ export const global = {
 
   icon: z.string().optional().editor({ input: 'icon' }),
 
+  // TODO: Array type not supported in Nuxt Studio.
+  //       It's just a string array type... so gotta be the editor value that's screwing us.
+  //       However authors array does work! Consider use of object array rather than simple
+  //       string values. Other values that could be added to the object along with src include
+  //       alt, caption... Point is making the .string().editor() value a property of an object
+  //       should render it presentable in the Nuxt Studio UI.
+  // ALTR: You could just make it a singular image by default. 🤔 This singular image could be
+  //       assumed to be the header image, the OG image, the preview image, etc...
   images: z.array(
     z.string().editor({ input: 'media' })
   ),

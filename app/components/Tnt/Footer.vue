@@ -54,11 +54,11 @@ div(:class="footer({ variant })")
           justify-between"
   )
     div(class="py-2 grow")
-      div(v-if="about || navItems || tel || email || address" class="flex flex-wrap")
+      div(v-if="about || navItems || tel || email || address" class="flex flex-wrap gap-4")
 
         div(v-if="about" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
           span(class="text-xl font-semibold") About
-          p {{ about }}
+          p(class="text-muted") {{ about }}
 
         div(v-if="navItems" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
           span(class="text-xl font-semibold") Links
@@ -73,13 +73,15 @@ div(:class="footer({ variant })")
         div(v-if="tel || email || address" class="flex-grow basis-full md:basis-1/3 lg:basis-1/4 xl:basis-1/5")
           span(class="text-xl font-semibold") Contact
           dl(v-if="tel")
-            dt Tel
-            dd {{ tel }}
+            dt(class="font-bold") Tel
+            dd
+              a(:href="`tel:${tel}`" class="text-dimmed hover:text-default") {{ tel }}
           dl(v-if="email")
-            dt Email
-            dd {{ email }}
+            dt(class="font-bold") Email
+            dd
+              a(:href="`mailto:${email}`" class="text-dimmed hover:text-default") {{ email }}
           dl(v-if="address")
-            dt Address
+            dt(class="font-bold") Address
             dd {{ address }}
 
       div(class="text-center")

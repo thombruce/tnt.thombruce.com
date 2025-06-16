@@ -2,5 +2,6 @@ x Configure site variables in `nuxt.config.ts`
 x Configure app in `app.config.ts` @optional
 x Customize and activate Cookie Policy at `content/.cookie-policy.md` (rename to `content/cookie-policy.md` to activate) @optional
 x Add Google Analytics environment variable (enabling analytics) @optional
+x Replace `public/favicon.ico` with brand-specific icon
 Restyle app by editing `assets/css/main.css` @optional
 x Add custom content to `content/`
