@@ -6,7 +6,7 @@ const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
-const { ui: { theme, layout: defaultLayout } } = useAppConfig()
+const { ui: { theme, layout: defaultLayout, pattern: backgroundPattern } } = useAppConfig()
 
 const collection = collections.includes(route.params.slug[0] as keyof PageCollections)
   ? route.params.slug[0] as keyof PageCollections
@@ -81,6 +81,8 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
     "
     :order="typeof page.list === 'object' && page.list.order ? page.list.order : undefined"
   )
+
+  TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 
   template(#toc v-if="page?.toc && page?.body.toc?.links.length")
     TntToc(:toc="page?.body.toc")
