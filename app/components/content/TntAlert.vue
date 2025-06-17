@@ -41,12 +41,12 @@ const computedUi = computed(() => {
 
 <template lang="pug">
 UAlert(
+  v-bind="$props"
   :title="title"
   :description="description"
   :color="computedColor"
   :icon="computedIcon"
   :ui="computedUi"
   :variant="variant"
-  v-bind="$props"
 )
 </template>
