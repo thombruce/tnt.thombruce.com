@@ -75,11 +75,11 @@ div(:class="footer({ variant })")
           dl(v-if="tel")
             dt(class="font-bold") Tel
             dd
-              a(:href="`tel:${tel}`" class="text-dimmed hover:text-default") {{ tel }}
+              a(:href="`tel:${tel}`" class="text-muted hover:text-default") {{ tel }}
           dl(v-if="email")
             dt(class="font-bold") Email
             dd
-              a(:href="`mailto:${email}`" class="text-dimmed hover:text-default") {{ email }}
+              a(:href="`mailto:${email}`" class="text-muted hover:text-default") {{ email }}
           dl(v-if="address")
             dt(class="font-bold") Address
             dd(class="text-muted") {{ address }}
