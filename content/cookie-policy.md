@@ -4,6 +4,7 @@ description:
 icon: lucide:cookie
 navigation:
   title: Cookies
+prevnext: false
 # Company Details
 companyName: TNT # Required
 website: tnt.thombruce.com # Required
