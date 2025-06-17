@@ -40,7 +40,7 @@ div(class="my-4 space-y-4")
             )
               UAvatar(:src="author.avatar?.src" size="2xs")
               span {{ author.name }}
-        div(class="col-span-3")(v-if="item.image")
+        div(v-if="item.image" class="col-span-3")
           div(class="block aspect-square")
             NuxtImg(:src="item.image" fit="cover" width="600" height="600" class="w-full h-full object-cover")
   div(v-else)
