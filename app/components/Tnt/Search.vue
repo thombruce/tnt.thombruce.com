@@ -27,7 +27,7 @@ for (const collection of useRuntimeConfig().public.collections as (keyof PageCol
   const section = await queryCollectionSearchSections(collection)
     .then(async => async.map(c => {
       return {
-        label: c.title,
+        label: [...c.titles, c.title].join(' > '),
         suffix: c.content,
         onSelect() { navigateTo(c.id) }
       }
