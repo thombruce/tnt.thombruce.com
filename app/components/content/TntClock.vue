@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// TODO: This is working in a content page as of now.
-//       It may not when rendered statically...?
-//       Investigate and... probably move to a
-//       components/global/ dir if that's the case.
 import { fromDate, toTime, toTimeZone, toLocalTimeZone, type ZonedDateTime } from '@internationalized/date'
 
 const { type = 'digital', timezone = undefined } = defineProps<{

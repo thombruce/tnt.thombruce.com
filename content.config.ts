@@ -1,8 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
-// TODO: Simplify global schema for greater ease of using Nuxt Studio.
-//       Some values can be "advanced", accessible only via meta?
-
 export const image = z.object({
   src: z.string().editor({ input: 'media' }),
   alt: z.string().optional(),

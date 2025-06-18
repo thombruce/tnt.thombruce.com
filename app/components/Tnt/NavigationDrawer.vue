@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// TODO: navItems should be passed to an :items prop from higher up the stack.
-//       Perhaps they should be set at the page level, even? Certainly no lower
-//       than the TntHeader which calls this.
 import type { NavigationMenuItem } from "@nuxt/ui"
 
 const { items: navItems } = defineProps<{
