@@ -9,5 +9,5 @@ const {
 </script>
 
 <template lang="pug">
-UTimeline(:default-value="items.length - 1" :items="items" class="w-96 m-auto")/
+UTimeline(:default-value="items.length - 1" :items="items" class="max-w-128 m-auto")/
 </template>
