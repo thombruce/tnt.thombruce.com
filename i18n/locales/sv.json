@@ -1,0 +1,52 @@
+{
+  "nuxtSiteConfig": {
+  },
+  "footer": {
+  },
+  "content": {
+    "collections": {
+    }
+  },
+  "dateTime": {
+    "january": "Januari",
+    "february": "Februari",
+    "march": "Mars",
+    "april": "April",
+    "may": "Maj",
+    "june": "Juni",
+    "july": "Juli",
+    "august": "Augusti",
+    "september": "September",
+    "october": "Oktober",
+    "november": "November",
+    "december": "December",
+    "sunday": "Söndag",
+    "monday": "Måndag",
+    "tuesday": "Tisdag",
+    "wednesday": "Onsdag",
+    "thursday": "Torsdag",
+    "friday": "Fredag",
+    "saturday": "Lördag",
+    "abbr": {
+      "january": "Jan",
+      "february": "Feb",
+      "march": "Mars",
+      "april": "April",
+      "may": "Maj",
+      "june": "Juni",
+      "july": "Juli",
+      "august": "Aug",
+      "september": "Sept",
+      "october": "Okt",
+      "november": "Nov",
+      "december": "Dec",
+      "sunday": "Sön",
+      "monday": "Mån",
+      "tuesday": "Tis",
+      "wednesday": "Ons",
+      "thursday": "Tors",
+      "friday": "Fre",
+      "saturday": "Lör"
+    }
+  }
+}

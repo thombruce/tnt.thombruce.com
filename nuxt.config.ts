@@ -104,8 +104,10 @@ export default defineNuxtConfig({
   },
   i18n: {
     strategy: 'no_prefix',
+    defaultLocale: 'en',
     locales: [
-      { code: 'en', name: 'English', file: 'en.json' }
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'sv', name: 'Svenska', file: 'sv.json' },
     ]
   },
   // PATCH: https://github.com/nuxt/nuxt/issues/32175#issuecomment-2898200099
