@@ -2,18 +2,25 @@
 import type { LayoutKey } from '#build/types/layouts'
 import type { PageCollections } from '@nuxt/content'
 
+// @i18n
+
+const { locale, defaultLocale } = useI18n()
+
 const route = useRoute()
 
 const { public: { collections } } = useRuntimeConfig()
 
-const { ui: { theme, layout: defaultLayout, pattern: backgroundPattern } } = useAppConfig()
+const { content: { i18n: contentI18n }, ui: { theme, layout: defaultLayout, pattern: backgroundPattern } } = useAppConfig()
 
-const collection = collections.includes(route.params.slug?.[0] as keyof PageCollections)
-  ? route.params.slug?.[0] as keyof PageCollections
-  : 'pages'
+const currentLocale = locale.value
+const currentLocaleIsDefault = currentLocale === defaultLocale
+
+let collection = collections.includes(((contentI18n && !currentLocaleIsDefault ? `${currentLocale}_` : '') + route.params.slug?.[0]) as keyof PageCollections)
+  ? ((contentI18n && !currentLocaleIsDefault ? `${currentLocale}_` : '') + route.params.slug?.[0]) as keyof PageCollections
+  : ((contentI18n && !currentLocaleIsDefault ? `${currentLocale}_` : '') + 'pages') as keyof PageCollections
 
 // NOTE: useAsyncData removed
-const page = await queryCollection(collection).path(route.path).first()
+let page = await queryCollection(collection).path(route.path).first()
 
 // NOTE: useAsyncData removed
 const navItems = await tntNav(true, collection)
@@ -61,6 +68,7 @@ NuxtLayout(:name="layout" :theme="theme" :collection="collection")
             max-w-none"
     )/
 
+    //- TODO: Ensure that article list shows content from fallback locale
     TntArticleList(
       v-if="page?.list"
       :collection="typeof page.list === 'object' && page.list.collection ? page.list.collection : collection"

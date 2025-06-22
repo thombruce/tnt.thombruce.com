@@ -3,12 +3,16 @@ import type { BreadcrumbItem } from '@nuxt/ui'
 
 import _startCase from 'lodash/startCase'
 
-export const tntCrumbs = async (path: string, collection: keyof PageCollections = 'pages') => {
+// @i18n
+// TODO: Should hide root "Home" on internationalised pages
+
+export const tntCrumbs = async (path: string, collection: keyof PageCollections) => {
   const params = path.split('/').filter(item => item)
 
-  const home: ContentNavigationItem | undefined = await queryCollectionNavigation('pages', ['icon'])
-    .where('path', '=', '/')
-    .then(n => n[0])
+  const home: ContentNavigationItem | undefined =
+    await queryCollectionNavigation('pages', ['icon'])
+      .where('path', '=', '/')
+      .then(n => n[0])
 
   const navItems: BreadcrumbItem[] = home
     ? [{ label: home.title, icon: home.icon as string | undefined, to: home.path }]

@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { tv } from 'tailwind-variants'
 
+const localePath = useLocalePath()
+
 const {
   site: { name },
   header: {
     navigation: { content: navContent, links: navLinks },
   },
 } = useAppConfig() as any
+
+// @i18n
 
 const { /* color = 'neutral', */ variant = undefined } = defineProps<{
   // color?: 'neutral' | 'primary'
@@ -52,7 +56,7 @@ div(:class="navbar({ variant })")
 
       UButton(
         :label="name"
-        to="/"
+        :to="localePath('/')"
         color="neutral"
         variant="ghost"
         class="my-2 px-2.5 py-1.5 font-extrabold"
