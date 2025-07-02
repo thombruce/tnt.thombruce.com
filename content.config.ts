@@ -55,8 +55,7 @@ export default defineContentConfig({
       type: 'page',
       schema: z.object({
         ...global,
-        nav: z.boolean().default(true),
-        toc: z.boolean().default(true),
+        layout: z.enum(['default', 'docs']).default('docs'),
         category: z.string().optional(),
       })
     }),
