@@ -1,10 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  future: {
-    compatibilityVersion: 4,
-  },
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-07-21',
   devtools: { enabled: true },
   nitro: {
     static: true

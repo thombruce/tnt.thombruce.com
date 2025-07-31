@@ -39,13 +39,13 @@ export const global = {
 
   links: z.array(z.string()).optional(),
 
-  layout: z.enum(['default', 'docs']).optional(),
+  layout: z.enum(['default', 'docs', 'empty']).optional(),
 
   // TODO: Some kinda page.ui object.
   //       Probably include layout (above) in this as well.
   header: z.boolean().default(false),
-  breadcrumbs: z.boolean().default(true),
-  prevnext: z.boolean().default(true),
+  breadcrumbs: z.boolean().or(z.undefined()),
+  prevnext: z.boolean().or(z.undefined()),
   // NOTE: Presently used only by the docs layout
   nav: z.boolean().default(true),
   toc: z.boolean().default(true),
@@ -69,5 +69,6 @@ export const global = {
       collection: z.string().optional(),
       path: z.string(),
       order: z.object({ field: z.string(), direction: z.enum(['ASC', 'DESC']) }).optional()
+      // TODO: Allow selection between paginated, infinite and none (list all on single page, no matter how many)
     })).optional(),
 }

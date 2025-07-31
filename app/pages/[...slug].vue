@@ -26,6 +26,12 @@ let page = await queryCollection(collection).path(route.path).first()
 
 const layout = (page?.layout || defaultLayout || 'default') as LayoutKey
 
+useHead({
+  title: page?.title
+})
+
+useSeoMeta({})
+
 definePageMeta({
   colorMode: pageMeta.colorMode
 })
@@ -48,8 +54,6 @@ useScriptGoogleAnalytics({
 
 <template lang="pug">
 NuxtLayout(:name="layout" :page="page" :collection="collection" :theme="theme")
-
-  TntBreadcrumbs(v-if="page?.breadcrumbs" :collection="collection")/
 
   TntPageHeader(v-if="page?.header" :title="page?.title" :description="page?.description" :headline="page?.headline" :links="page?.links")
 
@@ -92,8 +96,6 @@ NuxtLayout(:name="layout" :page="page" :collection="collection" :theme="theme")
     "
     :order="typeof page.list === 'object' && page.list.order ? page.list.order : undefined"
   )
-
-  TntPrevNext(v-if="page?.prevnext" :collection="collection")/
 
   TntBackground(v-if="backgroundPattern" :pattern="backgroundPattern")/
 </template>
