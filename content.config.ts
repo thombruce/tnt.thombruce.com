@@ -11,6 +11,8 @@ export default defineContentConfig({
         exclude: [
           '.*',
           '.*/**/*',
+          '_*',
+          '_*/**/*',
           '*blog/**/*',
           '*docs/**/*',
           '*testimonials/**/*',

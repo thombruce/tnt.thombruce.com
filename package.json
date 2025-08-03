@@ -35,8 +35,13 @@
     "lodash": "^4.17.21",
     "nuxt-site-config": "^3.2.0",
     "pug": "^3.0.3",
+    "rehype-sanitize": "^6.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "tailwind-variants": "^1.0.0",
     "typescript": "^5.8.2",
+    "unified": "^11.0.5",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
